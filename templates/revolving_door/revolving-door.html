@@ -17,7 +17,6 @@
             <tr>
               <th>Firma</th>
               <th>Teslim Tarihi</th>
-              <th>Teslim Şekli</th>
               <th>Kayıt Zamanı</th>
               <th>Detaylar</th>
             </tr>
@@ -27,7 +26,6 @@
             <tr>
               <td>{{x.company}}</td>
               <td>{{x.delivery_date}}</td>
-              <td>{{x.delivery_method}}</td>
               <td>{{x.published_date|timesince}} önce</td>
               <td><a href="{% url 'detailrevolvingdoor' id=x.id %}" ><div class="btn btn-success btn-sm">Görüntüle</div></a></td>
             </tr>

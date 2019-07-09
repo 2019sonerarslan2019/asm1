@@ -53,8 +53,9 @@
         <div class="col-md-12 tab-wrap">
           <br>
           
-          <div class="tab-content bg-light p-4 p-md-5 ftco-animate" id="v-pills-tabContent">
-            <div class="tab-pane py-2 fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
+          <div class="tab-content bg-light p-4 p-md-5 ftco-animate card" id="v-pills-tabContent">
+              <!-- İş Emri -->
+            <div class="tab-pane py-2 fade show active card-body" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
               <h3 style="text-align: center;">ATÖLYE İŞ EMRİ</h3>
 
               <table style="text-align: center;" class="table table-hover">
@@ -101,12 +102,6 @@
                       <th>KANOPİ</th>
                       <th>TOPLAM YÜKSEKLİK</th>
                       <th>KANAT SAYISI</th>
-                      <th>SABİT CAM</th>
-                      <th>HAREKETLİ CAM</th>
-                      <th>SABİT CAM ADEDİ</th>
-                      <th>HAREKETLİ CAM ADEDİ</th>
-                      <th>RENK</th>
-                      <th>IŞIKLANDIRMA</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -117,16 +112,34 @@
                       <td>{{rd.canopy}}</td>
                       <td>{{rd.total_height}}</td>
                       <td>{{ rd.wing }}</td>
-                      <td>{{ rd.fixed_glass }}</td>
-                      <td>{{ rd.moving_glass }}</td>
-                      <td>{{ rd.fixed_glass_no }}</td>
-                      <td>{{ rd.moving_glass_no }}</td>
-                      <td>{{ rd.color }}</td>
-                      <td>{{ rd.lighting }}</td>
                     </tr>
                    
                   </tbody>
                 </table>
+                <table style="text-align: center;" class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>SABİT CAM</th>
+                        <th>HAREKETLİ CAM</th>
+                        <th>SABİT CAM ADEDİ</th>
+                        <th>HAREKETLİ CAM ADEDİ</th>
+                        <th>RENK</th>
+                        <th>IŞIKLANDIRMA</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                       
+                      <tr>
+                        <td>{{ rd.fixed_glass }}</td>
+                        <td>{{ rd.moving_glass }}</td>
+                        <td>{{ rd.fixed_glass_no }}</td>
+                        <td>{{ rd.moving_glass_no }}</td>
+                        <td>{{ rd.color }}</td>
+                        <td>{{ rd.lighting }}</td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
                 <table style="text-align: center;" class="table table-hover">
                     <thead>
                       <tr>
@@ -166,6 +179,8 @@
                   </div>
             </div>
 
+            <!-- Genel -->
+
             <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
               <div class="row">
                
@@ -176,21 +191,48 @@
                     <table style="text-align: center;" class="table table-hover">
                         <thead>
                           <tr>
-                            <th>KANOPİ</th>
-                            <th>GEÇİŞ YÜKSEKLİĞİ</th>
-                            <th>TOPLAM YÜKSEKLİK</th>
+                            <th>K (KANOPİ)</th>
                           </tr>
                         </thead>
                         <tbody>
                            
                           <tr>
-                            <td>{{rd.canopy}}</td>
-                            <td>{{rd.trans_height}}</td>
-                            <td>{{rd.total_height}}</td>
+                            <td>{{rd.canopy}} mm</td>
                           </tr>
                          
                         </tbody>
                       </table>
+                      <table style="text-align: center;" class="table table-hover">
+                          <thead>
+                            <tr>
+                              
+                              <th>G.Y (GEÇİŞ YÜKSEKLİĞİ)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                             
+                            <tr>
+                              
+                              <td> {{rd.trans_height}} mm</td>
+                            </tr>
+                           
+                          </tbody>
+                        </table>
+                        <table style="text-align: center;" class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>T.Y (TOPLAM YÜKSEKLİK)</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                               
+                              <tr>
+                                <td>{{rd.total_height}} mm</td>
+                              </tr>
+                             
+                            </tbody>
+                          </table>
+                        
                 </div>
               </div><br><br>
               <div class="row">
@@ -201,13 +243,13 @@
                       <table style="text-align: center;" class="table table-hover">
                           <thead>
                             <tr>
-                              <th>ÇAP</th>
+                              <th> D (ÇAP)</th>
                             </tr>
                           </thead>
                           <tbody>
                              
                             <tr>
-                              <td>{{rd.dia}}</td>
+                              <td>{{rd.dia}} mm</td>
                             </tr>
                            
                           </tbody>
@@ -215,15 +257,24 @@
                   </div>
               </div>
             </div>
-
+            <!-- Kanopi -->
             <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
-              <div class="row departments">
-                
-                Kanopi
-               
-              </div>
-            </div>
+                <h3 style="text-align: center;">KANOPİ İMALATI</h3>
 
+             
+              <div class="row">
+                    
+                  <div class="col-md-6">
+  
+                  </div>
+                 
+                  <div class="col-md-6">
+                    
+                  </div>
+  
+                </div>
+            </div>
+            <!-- Kanopi Reçete -->
             <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-day-4-tab">
               <div class="row departments">
                
@@ -231,14 +282,169 @@
                 
               </div>
             </div>
-
+            <!-- 3 -->
             <div class="tab-pane fade" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-day-5-tab">
-              <div class="row departments">
                
-                  3
+                    
+                      <div class="row">
+                    
+                          <div class="col-md-6" style="text-align: center;">
+                              <h4>SABİT KANAT DOĞRAMA</h4><br>
+                              <img class="img-fluid" src="{% static 'img/skd.png' %}" alt="">
+                              <table style="text-align: center;" class="table table-hover">
+                                  <thead>
+                                    <tr>
+                                      <th>PH (PROFİL YÜKSEKLİĞİ)</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                     
+                                    <tr>
+                                      <td>{{ph}} mm</td>
+                                    </tr>
+                                   
+                                  </tbody>
+                                </table>
+                                <table style="text-align: center;" class="table table-hover">
+                                    <thead>
+                                      <tr>
+                                        <th>PR (PROFİL RADÜS)</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                       
+                                      <tr>
+                                        <td>{{pr}} mm Dış Yarıçap</td>
+                                      </tr>
+                                     
+                                    </tbody>
+                                  </table><br>
+                                  <img src="{% static 'img/iy-dy.png' %}" alt=""> 
+                            <table style="text-align: center;" class="table table-hover">
+                                <thead>
+                                  <tr>
+                                    <th>İY (İÇ YAY UZUNLUĞU)</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                   
+                                  <tr>
+                                    <td>{{iydograma}} mm</td>
+                                  </tr>
+                                 
+                                </tbody>
+                              </table>
+                              <table style="text-align: center;" class="table table-hover">
+                                  <thead>
+                                    <tr>
+                                      <th>DY (DIŞ YAY UZUNLUĞU)</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                     
+                                    <tr>
+                                      <td>{{dydograma}} mm</td>
+                                    </tr>
+                                   
+                                  </tbody>
+                                </table><br>
+                                <img src="{% static 'img/ik-dk.png' %}" alt=""> 
+                            <table style="text-align: center;" class="table table-hover">
+                                <thead>
+                                  <tr>
+                                    <th>İK (İÇ KESİM UZUNLUĞU)</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                   
+                                  <tr>
+                                    <td>{{ik}} mm</td>
+                                  </tr>
+                                 
+                                </tbody>
+                              </table>
+                              <table style="text-align: center;" class="table table-hover">
+                                  <thead>
+                                    <tr>
+                                      <th>DK (DIŞ KESİM UZUNLUĞU)</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                     
+                                    <tr>
+                                      <td>{{dk}} mm</td>
+                                    </tr>
+                                   
+                                  </tbody>
+                                </table>
+                          </div>
+                         
+                          <div class="col-md-6" style="text-align: center;">
+                             <h4>SABİT KANAT LAMİNE CAM</h4><br>
+                             <img class="img-fluid" src="{% static 'img/sklc.png' %}" alt="">
+                             <table style="text-align: center;" class="table table-hover">
+                                <thead>
+                                  <tr>
+                                    <th>C.H (CAM YÜKSEKLİĞİ)</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                   
+                                  <tr>
+                                    <td>{{ch}} mm</td>
+                                  </tr>
+                                 
+                                </tbody>
+                              </table>
+                              <table style="text-align: center;" class="table table-hover">
+                                  <thead>
+                                    <tr>
+                                      <th>C.R (CAM RADÜS)</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                     
+                                    <tr>
+                                      <td>{{cr}} mm Dış Yarıçap</td>
+                                    </tr>
+                                   
+                                  </tbody>
+                                </table><br>
+                                <img src="{% static 'img/iy-dy.png' %}" alt=""> 
+                                <table style="text-align: center;" class="table table-hover">
+                                    <thead>
+                                      <tr>
+                                        <th>İY (İÇ YAY UZUNLUĞU)</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                       
+                                      <tr>
+                                        <td>{{iycam}} mm</td>
+                                      </tr>
+                                     
+                                    </tbody>
+                                  </table>
+                                  <table style="text-align: center;" class="table table-hover">
+                                      <thead>
+                                        <tr>
+                                          <th>DY (DIŞ YAY UZUNLUĞU)</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                         
+                                        <tr>
+                                          <td>{{dycam}} mm</td>
+                                        </tr>
+                                       
+                                      </tbody>
+                                    </table>
+                          </div>
+          
+                          </div>
+      
+                    </div>
                
-              </div>
-            </div>
 
             <div class="tab-pane fade" id="v-pills-6" role="tabpanel" aria-labelledby="v-pills-day-6-tab">
               <div class="row departments">
