@@ -1,0 +1,311 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<section class="services-area section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+            <b style="color:black;">MR30/SA OTOMATİK DÖNER KAPI</b>
+            <div>{{ rd.company }}</div>
+            </div>
+
+            <div class="col-md-4" style="text-align: right;">
+
+                 Oluşturan : <b style="color:black;">GokhanSuzen</b>  <br>
+                {{ rd.published_date }}
+            </div>
+        </div>
+        <hr>
+</div>
+
+<section class="ftco-section">
+  <div class="container">
+    
+    <div class="ftco-departments">
+      <div class="row">
+        <div class="col-md-12 nav-link-wrap">
+          <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link ftco-animate active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">İş Emri</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Genel</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Kanopi</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">Kanopi Reçete</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-5-tab" data-toggle="pill" href="#v-pills-5" role="tab" aria-controls="v-pills-5" aria-selected="false">3</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-6-tab" data-toggle="pill" href="#v-pills-6" role="tab" aria-controls="v-pills-5" aria-selected="false">4</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-7-tab" data-toggle="pill" href="#v-pills-7" role="tab" aria-controls="v-pills-5" aria-selected="false">5</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-8-tab" data-toggle="pill" href="#v-pills-8" role="tab" aria-controls="v-pills-5" aria-selected="false">6</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-9-tab" data-toggle="pill" href="#v-pills-9" role="tab" aria-controls="v-pills-5" aria-selected="false">7</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-10-tab" data-toggle="pill" href="#v-pills-10" role="tab" aria-controls="v-pills-5" aria-selected="false">8</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-11-tab" data-toggle="pill" href="#v-pills-11" role="tab" aria-controls="v-pills-5" aria-selected="false">9</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-12-tab" data-toggle="pill" href="#v-pills-12" role="tab" aria-controls="v-pills-5" aria-selected="false">9.1</a>
+          </div>
+        </div>
+        <div class="col-md-12 tab-wrap">
+          <br>
+          
+          <div class="tab-content bg-light p-4 p-md-5 ftco-animate" id="v-pills-tabContent">
+            <div class="tab-pane py-2 fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
+              <h3 style="text-align: center;">ATÖLYE İŞ EMRİ</h3>
+
+              <table style="text-align: center;" class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>FİRMA</th>
+                      <th>CRM NO</th>
+                      <th>TESLİM ŞEKLİ</th>
+                      <th>TESMLİM TARİHİ</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                     
+                    <tr>
+                      <td>{{rd.company}}</td>
+                      <td>{{rd.crm_no}}</td>
+                      <td>{{rd.delivery_method}}</td>
+                      <td>{{rd.delivery_date}}</td>
+                    </tr>
+                   
+                  </tbody>
+                </table>
+                <table style="text-align: left;" class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>SEVK ADRESİ</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                       
+                      <tr>
+                        <td>{{rd.adress}}<br></td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                <br>
+              <h3 style="text-align: center;">MR30/SA OTOMATİK DÖNER KAPI</h3>
+              <table style="text-align: center;" class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>ÇAP</th>
+                      <th>GEÇİŞ YÜKSEKLİĞİ</th>
+                      <th>KANOPİ</th>
+                      <th>TOPLAM YÜKSEKLİK</th>
+                      <th>KANAT SAYISI</th>
+                      <th>SABİT CAM</th>
+                      <th>HAREKETLİ CAM</th>
+                      <th>SABİT CAM ADEDİ</th>
+                      <th>HAREKETLİ CAM ADEDİ</th>
+                      <th>RENK</th>
+                      <th>IŞIKLANDIRMA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                     
+                    <tr>
+                      <td>{{rd.dia}}</td>
+                      <td>{{rd.trans_height}}</td>
+                      <td>{{rd.canopy}}</td>
+                      <td>{{rd.total_height}}</td>
+                      <td>{{ rd.wing }}</td>
+                      <td>{{ rd.fixed_glass }}</td>
+                      <td>{{ rd.moving_glass }}</td>
+                      <td>{{ rd.fixed_glass_no }}</td>
+                      <td>{{ rd.moving_glass_no }}</td>
+                      <td>{{ rd.color }}</td>
+                      <td>{{ rd.lighting }}</td>
+                    </tr>
+                   
+                  </tbody>
+                </table>
+                <table style="text-align: center;" class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>KIRILAN KANAT</th>
+                        <th>YER ÇEMBERİ</th>
+                        <th>GECE KALKANI</th>
+                        <th>TOPUK SENSÖRÜ</th>
+                        <th>EL SENSÖRÜ</th>
+                        <th>SPOT SCAN</th>
+                        <th>İSPANYOLET KİLİT</th>
+                        <th>PASLANMAZ KOL</th>
+                        <th>BUTON DİREĞİ</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                       
+                      <tr>
+                        <td> {% if rd.broken_wing  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+                        <td> {% if rd.ground_circle  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+                        <td> {% if rd.night_sensor  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+                        <td> {% if rd.heel_sensor  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+                        <td> {% if rd.hand_sensor  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+                        <td> {% if rd.spot_scan  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+                        <td> {% if rd.spain.key  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+                        <td> {% if rd.stain_arm  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+                        <td> {% if rd.button_pole  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                  <h3 style="text-align: center;">İMALAT NOTLARI</h3>
+                  <div class="card">
+                    <div class="card-body">
+                      <p>{% if rd.notes %} {{ rd.notes }} {% else %} <p>Not yok.</p> {% endif %}</p>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
+              <div class="row">
+               
+                <div class="col-md-6">
+                  <img src="{% static 'img/ty.png' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-6">
+                    <table style="text-align: center;" class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>KANOPİ</th>
+                            <th>GEÇİŞ YÜKSEKLİĞİ</th>
+                            <th>TOPLAM YÜKSEKLİK</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                           
+                          <tr>
+                            <td>{{rd.canopy}}</td>
+                            <td>{{rd.trans_height}}</td>
+                            <td>{{rd.total_height}}</td>
+                          </tr>
+                         
+                        </tbody>
+                      </table>
+                </div>
+              </div><br><br>
+              <div class="row">
+                  <div class="col-md-6">
+                      <img src="{% static 'img/dia.png' %}" class="img-fluid" alt="">
+                  </div>
+                  <div class="col-md-6">
+                      <table style="text-align: center;" class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th>ÇAP</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                             
+                            <tr>
+                              <td>{{rd.dia}}</td>
+                            </tr>
+                           
+                          </tbody>
+                        </table>
+                  </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
+              <div class="row departments">
+                
+                Kanopi
+               
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-day-4-tab">
+              <div class="row departments">
+               
+                  Kanopi Reçete
+                
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-day-5-tab">
+              <div class="row departments">
+               
+                  3
+               
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-6" role="tabpanel" aria-labelledby="v-pills-day-6-tab">
+              <div class="row departments">
+               
+                  4
+               
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-7" role="tabpanel" aria-labelledby="v-pills-day-7-tab">
+              <div class="row departments">
+               
+                  5
+               
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-8" role="tabpanel" aria-labelledby="v-pills-day-8-tab">
+              <div class="row departments">
+               
+                  6
+               
+              </div>
+            </div>   
+            
+            <div class="tab-pane fade" id="v-pills-9" role="tabpanel" aria-labelledby="v-pills-day-9-tab">
+              <div class="row departments">
+               
+                  7
+               
+              </div>
+            </div>
+
+
+            <div class="tab-pane fade" id="v-pills-10" role="tabpanel" aria-labelledby="v-pills-day-10-tab">
+              <div class="row departments">
+               
+                  8
+               
+              </div>
+            </div>
+
+
+            <div class="tab-pane fade" id="v-pills-11" role="tabpanel" aria-labelledby="v-pills-day-11-tab">
+              <div class="row departments">
+               
+                  9
+               
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-12" role="tabpanel" aria-labelledby="v-pills-day-12-tab">
+              <div class="row departments">
+               
+                  9.1
+               
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</section>
+
+{% endblock %}
