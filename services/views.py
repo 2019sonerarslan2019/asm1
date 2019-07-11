@@ -30,6 +30,17 @@ def create_revolving_door_view(request):
 
     return render(request,'revolving_door/create-revolving-door.html',context)
 
+def YUVARLA(x):
+
+    if x > float(int(x)) + .001 :
+        x = int(x) + 1 
+        return x
+
+    else: 
+        return x    
+
+    
+
 def detail_revolving_door_view(request,id):
     
     rd = RevolvingDoor.objects.get(id=id)
@@ -116,6 +127,48 @@ def detail_revolving_door_view(request,id):
     k2 = (int(rd.dia)-244)/2
     if k2 > float(int(k2)) + .001: int(k2) + 1 
 
+    #--------------------7
+    #--------Levha 1    
+    lb = 0
+    if int(rd.dia) > 3600: lb = (((int(rd.dia)/2)-57.5)-487.5)
+    else: lb = (int(rd.dia)-810)/2
+    if lb > float(int(lb)) + .001 : lb = int(lb) + 1
+
+    dy = ((((int(rd.dia)-115)*3.14)/12)+40)
+    if dy > float(int(dy)) + .001 : dy = int(dy) + 1
+    
+    iy = ((695*3.14)/12)+40
+    if iy > float(int(iy)) + .001 : iy = int(iy) + 1
+    
+    r2 =  (int(rd.dia)-115)/2 
+
+    #--------Levha 2
+    lb_2 = 0
+    if int(rd.dia) > 3600: lb_2 = (((int(rd.dia)/2)-57.5)-487.5)
+    else: lb_2 = (int(rd.dia)-810)/2
+    lb_2 = YUVARLA(lb_2)
+
+    dy_2 = ((((int(rd.dia)-115)*3.14)/12)+40)
+    dy_2 = YUVARLA(dy_2)   
+
+    iy_2 = ((695*3.14)/12)+40
+    iy_2 = YUVARLA(iy_2)
+
+    r2_2 =  (int(rd.dia)-115)/2
+    
+    sm = 0
+    if int(rd.dia) > 3600: sm = (((int(rd.dia)-1090)/2)/2)-100
+    else: sm = (((int(rd.dia)-810)/2)/2)-100     
+    #---------Levha 3
+    lb_3 = 0
+    if int(rd.dia) > 3600: lb_3 = (((int(rd.dia)/2)-57.5)-487.5)
+    else: lb_3 = (int(rd.dia)-810)/2
+    lb_3 = YUVARLA(lb_3)
+    dy_3 = ((((int(rd.dia)+242.5)+242.5)*3.14)/12)+40
+    iy_3 =((695*3.14)/12)+40
+    #(Dışçap-115)/2+5& " mm"
+    r2_3 = ((int(rd.dia) -115)/2)+5
+
     context = {
         'rd':rd,
         'ph':int(ph),'pr':int(pr),'ch':int(ch),
@@ -126,7 +179,11 @@ def detail_revolving_door_view(request,id):
         'kanopi_birlesim':int(kanopi_birlesim),'kbu_u_profile':int(kbu_u_profile),'sbu_u_profile':int(sbu_u_profile),
         's1':int(s1),'s2':int(s2),'s3':int(s3),'u_prf_dis_kesim':int(u_prf_dis_kesim),'u_profile_dis_cap':u_profile_dis_cap,
         'k1':int(k1),'dk':int(dk),'ad':int(ad),'kb':int(kb),'kl':int(kl),'ch':int(ch),'cl':int(cl),
-        'ek':int(ek),'k2':int(k2),
+        'ek':int(ek),'k2':int(k2),'lb':int(lb),'dy':int(dy),'iy':int(iy),'r2':float(r2),
+        'lb_2':int(lb_2),'dy_2':int(dy_2),'iy_2':int(iy_2),'r2_2':float(r2_2),'sm':float(sm),
+        'lb_3':int(lb_3),'dy_3':int(dy_3),'iy_3':int(iy_3),'r2_3':r2_3,
+
+
 
         
         
