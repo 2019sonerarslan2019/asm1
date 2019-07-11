@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import RevolvingDoor
 
 from .forms import RevolvingDoorForm
-
+import math
 
 def revolving_door_view(request):
     
@@ -33,6 +33,38 @@ def create_revolving_door_view(request):
 def detail_revolving_door_view(request,id):
     
     rd = RevolvingDoor.objects.get(id=id)
+
+    #--------------------------Kanopi
+
+    us_dis = rd.canopy - 140 
+    if rd.canopy > 210:
+        us_dis = 70
+
+    ts_dis_kesim = ((int(rd.dia)-4)*3.14)/2
+    if ts_dis_kesim > float(int(ts_dis_kesim)) + .001: ts_dis_kesim = int(ts_dis_kesim) + 1    
+
+    ts_dis_cap = int(rd.dia)- 4  
+
+    us_dis_kesim =  ((int(rd.dia)-4)*3.14)/2
+    if us_dis_kesim > float(int(us_dis_kesim)) + .001: us_dis_kesim = int(us_dis_kesim) + 1
+
+    us_dis_cap = int(rd.dia) - 4   
+
+    kanopi_birlesim = int(rd.canopy) - 53
+    kbu_u_profile = int(rd.canopy) - 53
+    sbu_u_profile = int(rd.canopy) - 78
+
+    s1 = math.sqrt(((int(rd.dia)/2)-40)**2-(330**2)*2)
+    if s1 > float(int(s1)+.001) : s1 = int(s1) + 1
+    s2 = (int(rd.dia)/2)-345
+    if s2 > float(int(s2)+.001) : s2 = int(s2) + 1
+    s3 = ((int(rd.dia)/2)-355)-35
+    if s3 > float(int(s3)+.001) : s3 = int(s3) + 1
+
+    u_prf_dis_kesim = ((int(rd.dia)-94)*3.14)/2
+    if u_prf_dis_kesim > float(int(u_prf_dis_kesim) + .001): u_prf_dis_kesim = int(u_prf_dis_kesim) + 1
+    u_profile_dis_cap = int(rd.dia) - 94
+
 
     #--------------------------3
     
@@ -68,12 +100,37 @@ def detail_revolving_door_view(request,id):
     dycam = (((float(rd.dia)-68)*3.14)/6)-67
     if dycam > float(int(dycam))+.001: dycam = int(dycam) + 1
 
-    
+    #---------------------4
+
+    k1 = int(rd.trans_height) - 76
+    dk = (int(rd.trans_height)-76)-22
+    kb = int(rd.trans_height) - 76
+    kl = (int(rd.dia)-244)/2
+    if kl > float(int(kl))+.001: kl = int(kl) + 1
+    ad = (int(rd.trans_height)-76)-156
+    ch = (int(rd.trans_height)-76)-163
+    cl = (int(rd.dia-244)/2)-94
+    if cl > float(int(cl))+.001: cl = int(cl) + 1
+    ek = ((int(rd.dia)-244)/2)-49   
+    if ek > float(int(ek)) + .001: ek = int(ek) + 1
+    k2 = (int(rd.dia)-244)/2
+    if k2 > float(int(k2)) + .001: int(k2) + 1 
+
     context = {
         'rd':rd,
         'ph':int(ph),'pr':int(pr),'ch':int(ch),
         'cr':int(cr),'iydograma':int(iydograma),'dydograma':int(dydograma),
-        'iycam':int(iycam),'dycam':int(dycam),'ik':int(ik),'dk':int(dk),
+        'iycam':int(iycam),'dycam':int(dycam),'ik':int(ik),'dk':int(dk),'us_dis':int(us_dis),
+        'ts_dis_kesim':int(ts_dis_kesim),'ts_dis_cap':int(ts_dis_cap),
+        'us_dis_kesim':int(us_dis_kesim),'us_dis_cap':int(us_dis_cap),
+        'kanopi_birlesim':int(kanopi_birlesim),'kbu_u_profile':int(kbu_u_profile),'sbu_u_profile':int(sbu_u_profile),
+        's1':int(s1),'s2':int(s2),'s3':int(s3),'u_prf_dis_kesim':int(u_prf_dis_kesim),'u_profile_dis_cap':u_profile_dis_cap,
+        'k1':int(k1),'dk':int(dk),'ad':int(ad),'kb':int(kb),'kl':int(kl),'ch':int(ch),'cl':int(cl),
+        'ek':int(ek),'k2':int(k2),
+
+        
+        
+        
     }
     
     return render(request,'revolving_door/detail-revolving-door.html',context)

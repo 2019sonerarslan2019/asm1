@@ -1,12 +1,12 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 
 
 class RevolvingDoor(models.Model):
 
     company = models.CharField(max_length=300,verbose_name='Firma')
     crm_no = models.CharField(max_length=50,verbose_name='CRM No')
-    adress = models.TextField(verbose_name='Sevk Adresi')
+    adress = RichTextField(verbose_name='Sevk Adresi')
     delivery_date = models.DateTimeField(verbose_name='Teslim Tarihi')
     delivery_method = models.CharField(max_length=100,verbose_name='Teslim Şekli')
 
@@ -31,7 +31,7 @@ class RevolvingDoor(models.Model):
     stain_arm = models.BooleanField(default=False,verbose_name='Paslanmaz Kol')
     button_pole = models.BooleanField(default=False,verbose_name='Buton Direği')
 
-    notes = models.TextField(blank=True,null=True,verbose_name='Notlar')
+    notes = RichTextField(blank=True,null=True,verbose_name='Notlar')
     
 
     published_date = models.DateTimeField(auto_now_add=True)

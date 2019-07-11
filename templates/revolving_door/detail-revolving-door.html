@@ -53,12 +53,12 @@
         <div class="col-md-12 tab-wrap">
           <br>
           
-          <div class="tab-content bg-light p-4 p-md-5 ftco-animate card" id="v-pills-tabContent">
+          <div class="tab-content bg-white p-4 p-md-5 ftco-animate card" id="v-pills-tabContent">
               <!-- İş Emri -->
-            <div class="tab-pane py-2 fade show active card-body" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
+            <div class="tab-pane py-2 fade show active card-body " id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
               <h3 style="text-align: center;">ATÖLYE İŞ EMRİ</h3>
-
-              <table style="text-align: center;" class="table table-hover">
+              <div class="table-responsive-md">
+              <table style="text-align: center;" class="table table-bordered">
                   <thead>
                     <tr>
                       <th>FİRMA</th>
@@ -78,7 +78,9 @@
                    
                   </tbody>
                 </table>
-                <table style="text-align: left;" class="table table-hover">
+              </div>
+              <div class="table-responsive-md">
+                <table style="text-align: left;" class="table table-bordered">
                     <thead>
                       <tr>
                         <th>SEVK ADRESİ</th>
@@ -92,9 +94,11 @@
                      
                     </tbody>
                   </table>
+                  </div>
                 <br>
               <h3 style="text-align: center;">MR30/SA OTOMATİK DÖNER KAPI</h3>
-              <table style="text-align: center;" class="table table-hover">
+              <div class="table-responsive-md">
+              <table style="text-align: center;" class="table table-bordered">
                   <thead>
                     <tr>
                       <th>ÇAP</th>
@@ -116,7 +120,9 @@
                    
                   </tbody>
                 </table>
-                <table style="text-align: center;" class="table table-hover">
+                </div>
+                <div class="table-responsive-md">
+                <table style="text-align: center;" class="table table-bordered">
                     <thead>
                       <tr>
                         <th>SABİT CAM</th>
@@ -140,7 +146,9 @@
                      
                     </tbody>
                   </table>
-                <table style="text-align: center;" class="table table-hover">
+                  </div>
+                  <div class="table-responsive-md">
+                <table style="text-align: center;" class="table table-bordered">
                     <thead>
                       <tr>
                         <th>KIRILAN KANAT</th>
@@ -157,20 +165,21 @@
                     <tbody>
                        
                       <tr>
-                        <td> {% if rd.broken_wing  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
-                        <td> {% if rd.ground_circle  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
-                        <td> {% if rd.night_sensor  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
-                        <td> {% if rd.heel_sensor  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
-                        <td> {% if rd.hand_sensor  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
-                        <td> {% if rd.spot_scan  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
-                        <td> {% if rd.spain.key  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
-                        <td> {% if rd.stain_arm  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
-                        <td> {% if rd.button_pole  %} <img src="{% static 'img/icon-yes.svg' %}"> {% else %} <img src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+                        <td> {% if rd.broken_wing  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+                        <td> {% if rd.ground_circle  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+                        <td> {% if rd.night_sensor  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+                        <td> {% if rd.heel_sensor  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+                        <td> {% if rd.hand_sensor  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+                        <td> {% if rd.spot_scan  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+                        <td> {% if rd.spain.key  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+                        <td> {% if rd.stain_arm  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+                        <td> {% if rd.button_pole  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
 
                       </tr>
                      
                     </tbody>
                   </table>
+                  </div>
                   <h3 style="text-align: center;">İMALAT NOTLARI</h3>
                   <div class="card">
                     <div class="card-body">
@@ -184,101 +193,259 @@
             <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
               <div class="row">
                
-                <div class="col-md-6">
-                  <img src="{% static 'img/ty.png' %}" class="img-fluid" alt="">
-                </div>
-                <div class="col-md-6">
-                    <table style="text-align: center;" class="table table-hover">
+                <div class="col-md-12">
+                  <div class="table-responsive-md">
+                    <table style="text-align: center;" class="table table-bordered">
                         <thead>
                           <tr>
-                            <th>K (KANOPİ)</th>
+                            <th>
+                  <img  src="{% static 'img/genel/genel_g1.jpg' %}" class="img-fluid" alt="">
+                </th>
+                <th>
+                    <img src="{% static 'img/genel/genel_g2.jpg' %}"  class="img-fluid" alt="">
+
+                </th>
                           </tr>
                         </thead>
                         <tbody>
                            
                           <tr>
-                            <td>{{rd.canopy}} mm</td>
+                            <td>
+                                <table style="text-align: center;" class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th>K (KANOPİ)</th>
+                                        <th>G.Y (GEÇİŞ YÜKSEKLİĞİ)</th>
+                                        <th>T.Y (TOPLAM YÜKSEKLİK)</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                       
+                                      <tr>
+                                        <td>{{rd.canopy}} mm</td>
+                                        <td> {{rd.trans_height}} mm</td>
+                                        <td>{{rd.total_height}} mm</td>
+                                      </tr>
+                                     
+                                    </tbody>
+                                  </table>
+                            </td>
+                            <td>
+                                <table style="text-align: center;" class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th> D (ÇAP)</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                       
+                                      <tr>
+                                        <td>{{rd.dia}}mm</td>
+                                      </tr>
+                                     
+                                    </tbody>
+                                  </table>
+                            </td>
+                           
                           </tr>
                          
                         </tbody>
                       </table>
-                      <table style="text-align: center;" class="table table-hover">
-                          <thead>
-                            <tr>
-                              
-                              <th>G.Y (GEÇİŞ YÜKSEKLİĞİ)</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                             
-                            <tr>
-                              
-                              <td> {{rd.trans_height}} mm</td>
-                            </tr>
-                           
-                          </tbody>
-                        </table>
-                        <table style="text-align: center;" class="table table-hover">
+                </div>
+              </div>
+              </div>
+            </div>
+            <!-- Kanopi -->
+            <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
+                <h3 style="text-align: center;">KANOPİ İMALATI</h3><br>
+
+             
+              <div class="row">
+                    
+     
+                  <div class="col-md-12" style="text-align: center;">
+                        <img src="{% static 'img/kanopi/kanopi.png' %}" class="img-fluid" alt=""><br><br>
+                  </div>
+                </div>
+                  <div class="row">
+                    <div class="col-md-8" style="text-align: center;">
+                      
+                      <div class="table-responsive-md">
+                          <table style="text-align: center;" class="table table-bordered">
+                              <thead>
+                                <tr>
+                                    <th>
+                                        <span>140 mm</span>
+                                        <img class="img-fluid" width="200" height="150" src="{% static 'img/kanopi/us-ts-140.png' %}" alt=""> <br>
+                                    </th>
+                                     <th>{{ us_dis }} mm
+                                        {% if rd.canopy > 210 %} <img class="img-fluid" width="200" height="150" src="{% static 'img/kanopi/us-ts-70.png' %}" alt=""><br> 
+                                        {% else %} <img class="img-fluid" width="200" height="150" src="{% static 'img/kanopi/us-ts-140.png' %}" alt="">{% endif %}<br></th> 
+                                      
+                                      </tr>
+
+                              </thead>
+                              <tbody>
+                                 
+                                <tr>
+                                      <td>
+                                        <table style="text-align: center;" class="table table-bordered">
+                                          <thead>
+                                            <tr>
+                                              <th>TS DIŞ KESİM UZUNLUĞU (2 ADET)</th>
+                                              <th>TS DIŞ ÇAP</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                             
+                                            <tr>
+                                              <td>{{ ts_dis_kesim }}mm</td>
+                                              <td>{{ ts_dis_cap }}</td>
+                                            </tr>
+                                           
+                                          </tbody>
+                                        </table>
+                                      </td>
+                                      <td>
+                                         
+                                            <table style="text-align: center;" class="table table-bordered">
+                                              <thead>
+                                                <tr>
+                                                  <th>US DIŞ KESİM UZUNLUĞU (2 ADET)</th>
+                                                  <th>US DIŞ ÇAP</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                 
+                                                <tr>
+                                                  <td>{{ us_dis_kesim }} mm</td>
+                                                  <td>{{ us_dis_cap }}</td>
+                                                </tr>
+                                               
+                                              </tbody>
+                                            </table>
+                                      </td>
+                                </tr>
+                               
+                              </tbody>
+                            </table>
+                         
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                      <div class="table-responsive-md"><br><br><br><br><br>
+                        <table style="text-align: center;" class="table table-bordered">
                             <thead>
                               <tr>
-                                <th>T.Y (TOPLAM YÜKSEKLİK)</th>
+                                <th>Orta Sigma Bağlantı Ayağı</th>
+                                <th>Alt Sigma Bağlantı Ayağı</th>
+                                <th>Üst Sigma Bağlantı Ayağı</th>
                               </tr>
                             </thead>
                             <tbody>
                                
                               <tr>
-                                <td>{{rd.total_height}} mm</td>
+                                <td>4</td>
+                                <td>10</td>
+                                <td>10</td>
                               </tr>
                              
                             </tbody>
                           </table>
-                        
-                </div>
-              </div><br><br>
-              <div class="row">
-                  <div class="col-md-6">
-                      <img src="{% static 'img/dia.png' %}" class="img-fluid" alt="">
+                    </div>
+                    </div>
                   </div>
-                  <div class="col-md-6">
-                      <table style="text-align: center;" class="table table-hover">
-                          <thead>
-                            <tr>
-                              <th> D (ÇAP)</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                             
-                            <tr>
-                              <td>{{rd.dia}} mm</td>
-                            </tr>
-                           
-                          </tbody>
-                        </table>
-                  </div>
-              </div>
-            </div>
-            <!-- Kanopi -->
-            <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
-                <h3 style="text-align: center;">KANOPİ İMALATI</h3>
+                  <div class="row">
+                    <div class="col-md-12">
 
-             
-              <div class="row">
-                    
-                  <div class="col-md-6">
-  
-                  </div>
-                 
-                  <div class="col-md-6">
-                    
-                  </div>
-  
-                </div>
-            </div>
+                      <div class="table-responsive-md"><br><br>
+                        <table style=" text-align: center;" class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th ><img src="{% static 'img/kanopi/kbu-sbu.png' %}" class="img-fluid" alt=""></th>
+                                <th><img src="{% static 'img/kanopi/s1-s2-s3.png' %}" class="img-fluid" alt=""</th>
+                                <th><img src="{% static 'img/kanopi/u-prf.png' %}" class="img-fluid" alt=""</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                               
+                              <tr>
+                                <td><table style="text-align: center;" class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                          <th>Kanopi Birleşim</th>
+                                          <th>KBU U Profil</th>
+                                          <th>SBU U Profil</th>
+                                        
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                       
+                                      <tr>
+                                        <td>{{ kanopi_birlesim }}mm</td>
+                                        <td>{{ kbu_u_profile }}mm </td>
+                                        <td>{{ sbu_u_profile }}mm </td>
+                                      </tr>
+                                     
+                                    </tbody>
+                                  </table></td>
+                                <td>
+                                    <table style="text-align: center;" class="table table-bordered">
+                                        <thead>
+                                          <tr>
+                                              <th>S1 (4 ADET)</th>
+                                              <th>S2 (8 ADET)</th>
+                                              <th>S3 (3 ADET)</th>
+                                            
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                           
+                                          <tr>
+                                            <td>{{ s1 }}mm</td>
+                                            <td>{{ s2 }}mm</td>
+                                            <td>{{ s3 }}mm</td>
+                                          </tr>
+                                         
+                                        </tbody>
+                                      </table>
+                                </td>
+                                <td>
+                                    <table style="text-align: center;" class="table table-bordered">
+                                        <thead>
+                                          <tr>
+                                              <th>U PRF DIŞ KESİM UZUNLUĞU (2 ADET)</th>
+                                              <th>U PROFİL DIŞ ÇAP</th>
+                                            
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                           
+                                          <tr>
+                                            <td>{{ u_prf_dis_kesim }}mm</td>
+                                            <td>{{ u_profile_dis_cap }}</td>
+                                          </tr>
+                                         
+                                        </tbody>
+                                      </table>
+                                </td>
+                              </tr>
+                             
+                            </tbody>
+                          </table>
+
+                    </div>
+                  </div></div>
+              </div>
             <!-- Kanopi Reçete -->
             <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-day-4-tab">
-              <div class="row departments">
-               
-                  Kanopi Reçete
+                <div style="text-align: center;">
+                    <h3>KANOPİ KULLANACAK PARÇALAR</h3><br>
+                      
+                    </div>
+  
+              <div class="row">
                 
               </div>
             </div>
@@ -290,155 +457,112 @@
                     
                           <div class="col-md-6" style="text-align: center;">
                               <h4>SABİT KANAT DOĞRAMA</h4><br>
-                              <img class="img-fluid" src="{% static 'img/skd.png' %}" alt="">
-                              <table style="text-align: center;" class="table table-hover">
+                              <img class="img-fluid" src="{% static 'img/3/pr-ph.jpg' %}" alt=""><br><br>
+                              <div class="table-responsive-md"> 
+                              <table style="text-align: center;" class="table table-bordered">
                                   <thead>
                                     <tr>
                                       <th>PH (PROFİL YÜKSEKLİĞİ)</th>
+                                      <th>PR (PROFİL RADÜS)</th>
+
                                     </tr>
                                   </thead>
                                   <tbody>
                                      
                                     <tr>
-                                      <td>{{ph}} mm</td>
+                                      <td>{{ph}}mm</td>
+                                      <td>{{pr}}mm Dış Yarıçap</td>
+
                                     </tr>
                                    
                                   </tbody>
-                                </table>
-                                <table style="text-align: center;" class="table table-hover">
-                                    <thead>
-                                      <tr>
-                                        <th>PR (PROFİL RADÜS)</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                       
-                                      <tr>
-                                        <td>{{pr}} mm Dış Yarıçap</td>
-                                      </tr>
-                                     
-                                    </tbody>
-                                  </table><br>
-                                  <img src="{% static 'img/iy-dy.png' %}" alt=""> 
-                            <table style="text-align: center;" class="table table-hover">
+                                </table></div>
+                               <br>
+                                  <img src="{% static 'img/3/iy-dy.jpg' %}" class="img-fluid" alt=""> <br><br>
+                                  <div class="table-responsive-md">
+                                  <table style="text-align: center;" class="table table-bordered">
                                 <thead>
                                   <tr>
                                     <th>İY (İÇ YAY UZUNLUĞU)</th>
+                                    <th>DY (DIŞ YAY UZUNLUĞU)</th>
+
                                   </tr>
                                 </thead>
                                 <tbody>
                                    
                                   <tr>
-                                    <td>{{iydograma}} mm</td>
+                                    <td>{{iydograma}}mm</td>
+                                    <td>{{dydograma}}mm</td>
+
                                   </tr>
                                  
                                 </tbody>
-                              </table>
-                              <table style="text-align: center;" class="table table-hover">
-                                  <thead>
-                                    <tr>
-                                      <th>DY (DIŞ YAY UZUNLUĞU)</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                     
-                                    <tr>
-                                      <td>{{dydograma}} mm</td>
-                                    </tr>
-                                   
-                                  </tbody>
-                                </table><br>
-                                <img src="{% static 'img/ik-dk.png' %}" alt=""> 
-                            <table style="text-align: center;" class="table table-hover">
+                              </table></div>
+                              <br>
+                                <img class="img-fluid"  src="{% static 'img/3/ik-dk.jpg' %}" alt=""> <br><br>
+                                <div class="table-responsive-md">
+                                <table style="text-align: center;" class="table table-bordered">
                                 <thead>
                                   <tr>
                                     <th>İK (İÇ KESİM UZUNLUĞU)</th>
+                                    <th>DK (DIŞ KESİM UZUNLUĞU)</th>
                                   </tr>
                                 </thead>
                                 <tbody>
                                    
                                   <tr>
-                                    <td>{{ik}} mm</td>
+                                    <td>{{ik}}mm</td>
+                                    <td>{{dk}}mm</td>
                                   </tr>
                                  
                                 </tbody>
-                              </table>
-                              <table style="text-align: center;" class="table table-hover">
-                                  <thead>
-                                    <tr>
-                                      <th>DK (DIŞ KESİM UZUNLUĞU)</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                     
-                                    <tr>
-                                      <td>{{dk}} mm</td>
-                                    </tr>
-                                   
-                                  </tbody>
-                                </table>
+                              </table></div>
+                             
                           </div>
                          
                           <div class="col-md-6" style="text-align: center;">
-                             <h4>SABİT KANAT LAMİNE CAM</h4><br>
-                             <img class="img-fluid" src="{% static 'img/sklc.png' %}" alt="">
-                             <table style="text-align: center;" class="table table-hover">
+                             <h4>SABİT KANAT LAMİNE CAM</h4><br><br>
+                             <img class="img-fluid" src="{% static 'img/3/cr-ch.jpg' %}" alt=""><br><br>
+                             <div class="table-responsive-md"><br>
+                             <table style="text-align: center;" class="table table-bordered">
                                 <thead>
                                   <tr>
                                     <th>C.H (CAM YÜKSEKLİĞİ)</th>
+                                    <th>C.R (CAM RADÜS)</th>
+
                                   </tr>
                                 </thead>
                                 <tbody>
                                    
                                   <tr>
-                                    <td>{{ch}} mm</td>
+                                    <td>{{ch}}mm</td>
+                                    <td>{{cr}}mm Dış Yarıçap</td>
+
                                   </tr>
                                  
                                 </tbody>
-                              </table>
-                              <table style="text-align: center;" class="table table-hover">
-                                  <thead>
-                                    <tr>
-                                      <th>C.R (CAM RADÜS)</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                     
-                                    <tr>
-                                      <td>{{cr}} mm Dış Yarıçap</td>
-                                    </tr>
-                                   
-                                  </tbody>
-                                </table><br>
-                                <img src="{% static 'img/iy-dy.png' %}" alt=""> 
-                                <table style="text-align: center;" class="table table-hover">
+                              </table></div>
+                             <br>
+                                <img class="img-fluid" src="{% static 'img/3/iy-dy.jpg' %}" alt=""> <br><br>
+                                <div class="table-responsive-md">
+                                <table style="text-align: center;" class="table table-bordered">
                                     <thead>
                                       <tr>
                                         <th>İY (İÇ YAY UZUNLUĞU)</th>
+                                        <th>DY (DIŞ YAY UZUNLUĞU)</th>
                                       </tr>
                                     </thead>
                                     <tbody>
                                        
                                       <tr>
-                                        <td>{{iycam}} mm</td>
+                                        <td>{{iycam}}mm</td>
+                                        <td>{{dycam}}mm</td>
                                       </tr>
                                      
                                     </tbody>
                                   </table>
-                                  <table style="text-align: center;" class="table table-hover">
-                                      <thead>
-                                        <tr>
-                                          <th>DY (DIŞ YAY UZUNLUĞU)</th>
-                                        </tr>
-                                      </thead>
-                                      <tbody>
-                                         
-                                        <tr>
-                                          <td>{{dycam}} mm</td>
-                                        </tr>
-                                       
-                                      </tbody>
-                                    </table>
+                                </div>
+                                 
                           </div>
           
                           </div>
@@ -447,25 +571,274 @@
                
 
             <div class="tab-pane fade" id="v-pills-6" role="tabpanel" aria-labelledby="v-pills-day-6-tab">
-              <div class="row departments">
-               
-                  4
-               
+              <div class="row">
+                  <div class="col-md-12">
+                  
+                  <div class="table-responsive-md">
+                      <table style="text-align: center;" class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th><img height="200" width="50"  src="{% static 'img/4/k1.jpg' %}" class="img-fluid" alt=""></th>
+                              <th><img height="210" width="55" src="{% static 'img/4/dk.jpg' %}" class="img-fluid" alt=""></th>
+                              <th><img height="250" width="200" src="{% static 'img/4/kb-kl.jpg' %}" class="img-fluid" alt=""></th>
+                              <th><img height="200" width="50" src="{% static 'img/4/ad.jpg' %}" class="img-fluid" alt=""></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                             
+                            <tr>
+                              <td>
+                                  <table style="text-align: center;" class="table table-bordered">
+                                      <thead>
+                                        <tr>
+                                          <th>K1 (DİKEY KENET)</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                         
+                                        <tr>
+                                          <td>{{ k1 }} mm</td>
+                                        </tr>
+                                       
+                                      </tbody>
+                                    </table>
+                              </td>
+                              <td>
+                                  <table style="text-align: center;" class="table table-bordered">
+                                      <thead>
+                                        <tr>
+                                          <th>DK (DİKME KESİM)</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                         
+                                        <tr>
+                                          <td>{{ dk }} mm</td>
+                                        </tr>
+                                       
+                                      </tbody>
+                                    </table>
+                              </td>
+                              <td>
+                                  <table style="text-align: center;" class="table table-bordered">
+                                  <thead>
+                                    <tr>
+                                      <th>KB (KANAT BOYU)</th>
+                                      <th>KL (KANAT UZUNLUĞU)</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                     
+                                    <tr>
+                                      <td>{{ kb }} mm</td>
+                                      <td>{{ kl }} mm</td>
+                                    </tr>
+                                   
+                                  </tbody>
+                                </table>
+                              </td>
+                              <td>
+                                  <table style="text-align: center;" class="table table-bordered">
+                                      <thead>
+                                        <tr>
+                                          <th>AD (MERKEZ DİKME)</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                         
+                                        <tr>
+                                          <td>{{ ad }} mm</td>
+                                        </tr>
+                                       
+                                      </tbody>
+                                    </table>
+                              </td>
+                            </tr>
+                           
+                          </tbody>
+                        </table>
+                      </div>   
+                      </div>
+              </div>
+              <div class="row">
+                <div class=col-md-12>
+
+                  <div class="table-responsive-md">
+
+                      <table style="text-align: center;" class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th>
+                                  <img height="200" width="110"  src="{% static 'img/4/ch-cl.jpg' %}" class="img-fluid" alt="">
+                              </th>
+                              <th>
+                                  <img height="200" width="200"  src="{% static 'img/4/ek.jpg' %}" class="img-fluid" alt="">
+                              </th>
+                              <th>
+                                  <img height="200" width="200"  src="{% static 'img/4/k2.jpg' %}" class="img-fluid" alt="">
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                             
+                            <tr>
+                              <td>
+                                  <table style="text-align: center;" class="table table-bordered">
+                                      <thead>
+                                        <tr>
+                                          <th>CH (CAM YÜKSEKLİĞİ)</th>
+                                          <th>CL (CAM GENİŞLİĞİ)</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                         
+                                        <tr>
+                                          <td>{{ ch }} mm</td>
+                                          <td> {{ cl }} mm</td>
+                                        </tr>
+                                       
+                                      </tbody>
+                                    </table>
+                              </td>
+                              <td>
+                                  <table style="text-align: center;" class="table table-bordered">
+                                      <thead>
+                                        <tr>
+                                          <th>EK (ETEK KESİM)</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                         
+                                        <tr>
+                                          <td>{{ ek }} mm</td>
+                                        </tr>
+                                       
+                                      </tbody>
+                                    </table>
+                              </td>
+                              <td>
+                                  <table style="text-align: center;" class="table table-bordered">
+                                      <thead>
+                                        <tr>
+                                          <th>K2 (ETEK KESİM)</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                         
+                                        <tr>
+                                          <td>{{ k2 }} mm</td>
+                                        </tr>
+                                       
+                                      </tbody>
+                                    </table>
+                              </td>
+                            </tr>
+                           
+                          </tbody>
+                        </table>
+
+                  </div>
+
+                </div>
               </div>
             </div>
-
+              <!-- 5 -->
             <div class="tab-pane fade" id="v-pills-7" role="tabpanel" aria-labelledby="v-pills-day-7-tab">
-              <div class="row departments">
-               
-                  5
-               
+             
+              <div style="text-align: center;">
+                <h3>SABİT KANAT CAM SİPARİŞ BİLGİLERİ</h3><br>
+                </div>
+              
+              <div class="row">
+                  <div class="col-md-4" style="text-align: center;">
+                      <img width="180" height="250" src="{% static 'img/3/cr-ch.jpg' %}" class="img-fluid" alt="">
+                  </div>
+                  
+                  <div class="col-md-8"><br><br><br>
+                    <div class="table-responsive-md">
+                    <table style="text-align: center;" class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>CAMIN NİTELİĞİ</th>
+                          <th>CAM ADEDİ</th>
+                          <th>CH (CAM YÜKSEKLİĞİ)</th>
+                          <th>CR (CAM RADÜS)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                         
+                        <tr>
+                          <td>{{ rd.fixed_glass }}</td>
+                          <td>{{ rd.fixed_glass_no }}</td>
+                          <td>{{ ch }} mm</td>
+                          <td>{{ cr }} mm Dış Yarıçap</td>
+                        </tr>
+                       
+                      </tbody>
+                    </table>
+                  </div>
+                  </div>
+              </div>
+
+              <div class="row">
+
+                <div class="col-md-4" style="text-align: center"><br><br>
+                  <img width="200" height="250" src="{% static 'img/3/iy-dy.jpg' %}" class="img-fluid" alt="">
+                </div>
+                 
+                <div class="col-md-8"><br>
+                  <table style="text-align: center;" class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>İY (İÇ YAY UZUNLUĞU)</th>
+                        <th>DY (DIŞ YAY UZUNLUĞU)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                       
+                      <tr>
+                        <td>{{ iycam }} mm</td>
+                        <td>{{ dycam }} mm</td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
 
+            <!-- 6 -->
             <div class="tab-pane fade" id="v-pills-8" role="tabpanel" aria-labelledby="v-pills-day-8-tab">
-              <div class="row departments">
+              <div style="text-align: center;">
+                <h3>HAREKETLİ KANAT CAM SİPARİŞ BİLGİLERİ</h3><br>
+                </div>
+              <div class="row">
                
-                  6
+                <div class="col-md-4" style="text-align: center"><br><br>
+                  <img width="150" height="200" src="{% static 'img/4/ch-cl.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-8"><br><br><br><br><br><br><br><br><br>
+                  <table style="text-align: center;" class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>CAMIN NİTELİĞİ</th>
+                        <th>CAM ADEDİ</th>
+                        <th>CH (CAMIN YÜKSEKLİĞİ)</th>
+                        <th>CL (CAMIN GENİŞLİĞİ)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                       
+                      <tr>
+                        <td>{{ rd.moving_glass }}</td>
+                        <td>{{ rd.moving_glass_no }}</td>
+                        <td>{{ ch }}</td>
+                        <td> {{ cl }}</td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                </div>
                
               </div>
             </div>   
