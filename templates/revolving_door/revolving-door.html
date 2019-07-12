@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block body %}
 <section class="services-area section-gap">
@@ -7,17 +7,22 @@
     <div class="container">
         <h1 style="text-align: center;">ATÖLYE İŞ EMRİ</h1><hr>
         <div class="row">
-            <div class="col-md-6"><h4>MR30/SA OTOMATİK DÖNER KAPI</h4></div>
+            <div class="col-md-6">  <h4>MR30/SA OTOMATİK DÖNER KAPI</h4></div>
             <div class="col-md-6" style="text-align: right;">
-                <a href="{% url 'createrevolvingdoor' %}"><div class="btn btn-primary btn-sm">+ Yeni Ekle</div></a><br><br></div>  
+                <a href="{% url 'createrevolvingdoor' %}"><img src="{% static 'img/add-icon.png' %}" width="30" height="30" alt="">Yeni Oluştur</a><br><br></div>  
         </div>
-        
+        <div class="card">
+          <div class="card-cody">
+
+         
+        <div class="table-responsive-md">
         <table class="table table-hover">
           <thead>
             <tr>
               <th>Firma</th>
               <th>Teslim Tarihi</th>
               <th>Kayıt Zamanı</th>
+              <th>CRM NO</th>
               <th>Detaylar</th>
             </tr>
           </thead>
@@ -27,11 +32,15 @@
               <td>{{x.company}}</td>
               <td>{{x.delivery_date}}</td>
               <td>{{x.published_date|timesince}} önce</td>
+              <th>{{ x.id }}</th>
               <td><a href="{% url 'detailrevolvingdoor' id=x.id %}" ><div class="btn btn-success btn-sm">Görüntüle</div></a></td>
             </tr>
             {% endfor %}
           </tbody>
         </table>
+      </div>
+    </div>
+  </div>
       </div>
 </section>
 

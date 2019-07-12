@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     #3th
     'crispy_forms',
     'ckeditor',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,7 @@ WSGI_APPLICATION = 'myapp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'asm.sqlite3'),
     }
 }
 
@@ -135,3 +136,14 @@ STATICFILES_DIRS = [
 CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'js/jquery.min.js')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+RECAPTCHA_PUBLIC_KEY = '6Ldy7pwUAAAAAHXdBqLK5Q4-9evlcFvt_ZWvNBDu'
+RECAPTCHA_PRIVATE_KEY = '6Ldy7pwUAAAAAD_CdCtfS9PndWZ_s_88TbHjmyOL'
+NO_CAPTCHA = True
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'width': '100%',
+        
+    },
+}

@@ -2,17 +2,21 @@ from .models import RevolvingDoor
 from django import forms
 
 
+
+
 class RevolvingDoorForm(forms.ModelForm):
     
+    delivery_date = forms.DateTimeField(widget = forms.SelectDateWidget,label="Teslim Tarihi")
+
     class Meta:
         model = RevolvingDoor
 
      
         fields = [
             'company',
-            'crm_no',
             'adress',
             'delivery_method',
+            'delivery_date',
             'dia',
             'trans_height',
             'canopy',
@@ -35,3 +39,5 @@ class RevolvingDoorForm(forms.ModelForm):
             'button_pole',
             'notes',
         ]
+
+

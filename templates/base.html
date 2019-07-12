@@ -41,16 +41,32 @@
 			      </div>
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
-                      <li><a href="{% url 'home' %}">Ana Sayfa</a></li>
+					  <li><a href="{% url 'home' %}">Ana Sayfa</a></li>
+					  {% if request.user.is_authenticated %}
 					  <li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							  İş Emri
+							  İŞ EMRİ
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							  <a class="dropdown-item" style="color:black;" href="{% url 'revolvingdoor' %}">MR30/SA OTOMATİK DÖNER KAPI</a>
 							</div>
 						  </li>
-			        </ul>
+
+						  <li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								  <img src="{% static 'img/user-icon.png' %}" class="img-fluid" width="15" height="15" alt=""> {{ request.user.get_username }}
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								  <a class="dropdown-item" style="color:black;" href="{% url 'revolvingdoor' %}">Hesap</a><br>
+								  <a class="dropdown-item text-danger" href="{% url 'logout' %}">Çıkış Yap</a>
+								  
+								</div>
+							  </li>
+						  {% else %}
+						  <li><a style="color:rgb(42, 177, 255);" href="{% url 'login' %}">GİRİŞ YAP</a></li>
+
+						  {% endif %}
+					</ul>
 			      </nav><!-- #nav-menu-container -->		    		
 		    	</div>
 		    </div>
@@ -80,5 +96,6 @@
 			<script src="{% static 'js/owl.carousel.min.js' %}"></script>							
 			<script src="{% static 'js/mail-script.js' %}"></script>	
 			<script src="{% static 'js/main.js' %}"></script>	
+			
 		</body>
 	</html>
