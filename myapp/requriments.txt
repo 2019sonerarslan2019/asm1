@@ -2,4 +2,5 @@ django==2.2
 django_crispy_forms==1.7.2
 django_ckeditor==5.7.1
 django-recaptcha==2.0.4
+--pre xhtml2pdf==0.2.3
 

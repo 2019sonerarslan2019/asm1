@@ -1,0 +1,149 @@
+{% load static %}
+
+<div class="row">
+        <div class="col-md-6" style="text-align: center;">
+            <img src="{% static 'img/9/sandik.jpg' %}" width="300" height="300"lass="img-fluid" alt="">
+        </div>
+        <div class="col-md-6" style="text-align: left;">
+            <table style="text-align: center;" class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>SİPARİŞ NO</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>{{ rd.id }}</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            <div class="alert alert-warning" role="alert"><b class="text-dark">NOT</b><br><br>
+              <p>* ÖLÇÜLER İÇ BOŞLUK ÖLÇÜLERİDİR.</p>
+              <p>* SANDIK ALT KISMI SAĞLAM DESTEKLENMELİDİR.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12"><br><br>
+        <div style="text-align: center;">
+          <h3>KANOPİ</h3>
+        </div>
+          <div class="table-responsive-md">
+              <table style="text-align: center;" class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>EN (mm)</th>
+                      <th>YÜKSEKLİK (mm)</th>
+                      <th>BOY (mm)</th>
+                      <th>AYAK (mm)</th>
+                      <th>ADET</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{{ kanopi_en }}</td>
+                      <td>{{ kanopi_yukseklik }}</td>
+                      <td>{{ kanopi_boy }}</td>
+                      <td>100</td>
+                      <td>1</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12"><br><br>
+          <div style="text-align: center;">
+            <h3>SABİT KANAT</h3>
+          </div>
+            <div class="table-responsive-md">
+                <table style="text-align: center;" class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>EN (mm)</th>
+                        <th>YÜKSEKLİK (mm)</th>
+                        <th>BOY (mm)</th>
+                        <th>AYAK (mm)</th>
+                        <th>ADET</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{ sabit_kanat_en }}</td>
+                        <td>{{ sabit_kanat_yukseklik }}</td>
+                        <td>{{ sabit_kanat_boy }}</td>
+                        <td>100</td>
+                        <td>1</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12"><br><br>
+            <div style="text-align: center;">
+              <h3>HAREKETLİ KANAT</h3>
+            </div>
+              <div class="table-responsive-md">
+                  <table style="text-align: center;" class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>EN (mm)</th>
+                          <th>YÜKSEKLİK (mm)</th>
+                          <th>BOY (mm)</th>
+                          <th>AYAK (mm)</th>
+                          <th>ADET</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>{{ hareketli_kanat_en }}</td>
+                          <td> {{ hareketli_kanat_yukseklik }} </td>
+                          <td>{{ hareketli_kanat_boy }}</td>
+                          <td>100</td>
+                          <td>1</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+              </div>
+          </div>
+        </div>
+        {% if rd.night_sensor %}
+        <div class="row">
+            <div class="col-md-12"><br><br>
+              <div style="text-align: center;">
+                <h3>GECE KALKANI</h3>
+              </div>
+                <div class="table-responsive-md">
+                    <table style="text-align: center;" class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>EN (mm)</th>
+                            <th>YÜKSEKLİK (mm)</th>
+                            <th>BOY (mm)</th>
+                            <th>AYAK (mm)</th>
+                            <th>ADET</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                              <td>{{ gece_kalkani_en }}</td>
+                              <td>{{ gece_kalkani_yukseklik }}</td>
+                              <td>{{ gece_kalkani_boy }}</td>
+                              <td>100</td>
+                              <td>1</td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+          </div>
+          {% endif %}

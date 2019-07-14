@@ -1,0 +1,61 @@
+{% load static %}
+<div style="text-align: center;">
+        <h3>SABİT KANAT CAM SİPARİŞ BİLGİLERİ</h3><br>
+        </div>
+
+      <div class="row">
+          <div class="col-md-4" style="text-align: center;">
+              <img width="180" height="250" src="{% static 'img/3/cr-ch.jpg' %}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-md-8"><br><br><br>
+            <div class="table-responsive-md">
+            <table style="text-align: center;" class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>CAMIN NİTELİĞİ</th>
+                  <th>CAM ADEDİ</th>
+                  <th>CH (CAM YÜKSEKLİĞİ)</th>
+                  <th>CR (CAM RADÜS)</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td>{{ rd.fixed_glass }}</td>
+                  <td>{{ rd.fixed_glass_no }}</td>
+                  <td>{{ ch_sabit_kanat }} mm</td>
+                  <td>{{ cr }} mm Dış Yarıçap</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          </div>
+      </div>
+      <hr>
+      <div class="row">
+
+        <div class="col-md-4" style="text-align: center"><br><br>
+          <img width="200" height="250" src="{% static 'img/3/iy-dy.jpg' %}" class="img-fluid" alt="">
+        </div>
+
+        <div class="col-md-8"><br>
+          <table style="text-align: center;" class="table table-bordered">
+            <thead>
+              <tr>
+                <th>İY (İÇ YAY UZUNLUĞU)</th>
+                <th>DY (DIŞ YAY UZUNLUĞU)</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td>{{ iycam }} mm</td>
+                <td>{{ dycam }} mm</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>

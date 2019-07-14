@@ -1,0 +1,143 @@
+{% load static %}
+<div class="row">
+        <div class="col-md-8"><br>
+          <h3>BAKLAVA LEVHA SİPARİŞ BİLGİLERİ</h3>
+          </div>
+          <div class=col-md-4>
+            <div class="table-responsive-md">
+              <table style="text-align: center;" class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>SİPARİŞ NO</th>
+                    <th>RENK</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>{{ rd.id }}</td>
+                    <td>{{ rd.color }}</td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+    </div>
+          </div>
+        </div></br>
+        <div class="row">
+         <div class="col-md-3">
+           <img src="{% static 'img/7/bakla_levha1.jpg' %}" class="img-fluid" alt="">
+         </div>
+        <div class="col-md-9">
+          <div class="table-responsive-md"><br><br>
+                  <table style="text-align: center;" class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>LEVHA RENGİ</th>
+                        <th>LEVHA KALINLIĞI</th>
+                        <th>ADET</th>
+                        <th>LB (LEVHA BOYU)</th>
+                        <th>DY (DIŞ YAY)</th>
+                        <th>İY (İÇ YAY)</th>
+                        <th>R1 (İÇ RADÜS)</th>
+                        <th>R2 (DIŞ RADÜS)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                      <tr>
+                        <td>{{ rd.color }}</td>
+                        <td> 2 mm </td>
+                        <td> 7 </td>
+                        <td> {{ lb }} mm</td>
+                        <td>{{ dy }}</td>
+                        <td>252</td>
+                        <td>347,5 mm</td>
+                        <td>{{ r2 }}</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+        </div><br>
+      </div>
+        </div><hr>
+        <div class="row">
+          <div class="col-md-3">
+            <img src="{% static 'img/7/bakla_levha2.jpg' %}" class="img-fluid" alt="">
+          </div>
+         <div class="col-md-9">
+           <div class="table-responsive-md"><br><br>
+                   <table style="text-align: center;" class="table table-bordered">
+                     <thead>
+                       <tr>
+                         <th>LEVHA RENGİ</th>
+                         <th>LEVHA KALINLIĞI</th>
+                         <th>ADET</th>
+                         <th>LB (LEVHA BOYU)</th>
+                         <th>DY (DIŞ YAY)</th>
+                         <th>İY (İÇ YAY)</th>
+                         <th>R1 (İÇ RADÜS)</th>
+                         <th>R2 (DIŞ RADÜS)</th>
+                         <th>SM (SPOT MESAFESİ)</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+
+                       <tr>
+                         <td>{{ rd.color }}</td>
+                         <td> 2 mm </td>
+                         <td> 4 </td>
+                         <td> {{ lb_2 }} mm</td>
+                         <td>{{ dy_2 }}</td>
+                         <td>252</td>
+                         <td>347,5 mm</td>
+                         <td>{{ r2_2 }}</td>
+                         <td>{{ sm }}</td>
+                       </tr>
+
+                     </tbody>
+                   </table>
+
+         </div>
+       </div>    <br>
+         </div><hr>
+         <div class="row">
+          <div class="col-md-3">
+            <img src="{% static 'img/7/bakla_levha3.jpg' %}" class="img-fluid" alt="">
+          </div>
+         <div class="col-md-9">
+           <div class="table-responsive-md"><br><br>
+                   <table style="text-align: center;" class="table table-bordered">
+                     <thead>
+                       <tr>
+                         <th>LEVHA RENGİ</th>
+                         <th>LEVHA KALINLIĞI</th>
+                         <th>ADET</th>
+                         <th>LB (LEVHA BOYU)</th>
+                         <th>DY (DIŞ YAY)</th>
+                         <th>252</th>
+                         <th>R1 (İÇ RADÜS)</th>
+                         <th>R2 (DIŞ RADÜS)</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+
+                       <tr>
+                         <td>{{ rd.color }}</td>
+                         <td> 2 mm </td>
+                         <td> 1 </td>
+                         <td> {{ lb_3 }} mm</td>
+                         <td>{{ dy_3 }}</td>
+                         <td>{{ iy_3 }}</td>
+                         <td>347,5 mm</td>
+                         <td>{{ r2_3 }}</td>
+                       </tr>
+
+                     </tbody>
+                   </table>
+
+         </div>
+       </div>
+         </div>

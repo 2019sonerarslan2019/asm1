@@ -44,7 +44,6 @@ class RevolvingDoor(models.Model):
     dia = models.IntegerField(default=0,verbose_name='Çap')
     trans_height = models.IntegerField(default=0,verbose_name='Geçiş Yüksekliği')
     canopy = models.IntegerField(default=0,verbose_name='Kanopi')
-    total_height = models.IntegerField(default=0,verbose_name='Toplam Yükseklik')
     wing = models.IntegerField(default=0,verbose_name='Kanat Sayısı')
     fixed_glass = models.CharField(max_length=100,verbose_name='Sabit Cam',choices=fixed_glass_data,default='4bombeliseffaflamine')
     moving_glass = models.CharField(max_length=100,verbose_name='Hareketli Cam',choices=moving_glass_data,default='8mmtemperli')

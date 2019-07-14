@@ -1,0 +1,64 @@
+{% load static %}
+<div class="row">
+
+        <div class="col-md-12">
+          <div class="table-responsive-md">
+            <table style="text-align: center;" class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>
+          <img  src="{% static 'img/genel/genel_g1.jpg' %}" class="img-fluid" alt="">
+        </th>
+        <th>
+            <img src="{% static 'img/genel/genel_g2.jpg' %}"  class="img-fluid" alt="">
+
+        </th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>
+                        <table style="text-align: center;" class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th>K (KANOPİ)</th>
+                                <th>G.Y (GEÇİŞ YÜKSEKLİĞİ)</th>
+                                <th>T.Y (TOPLAM YÜKSEKLİK)</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+                              <tr>
+                                <td>{{rd.canopy}} mm</td>
+                                <td> {{rd.trans_height}} mm</td>
+                                <td>{{total_height}} mm</td>
+                              </tr>
+
+                            </tbody>
+                          </table>
+                    </td>
+                    <td>
+                        <table style="text-align: center;" class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th> D (ÇAP)</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+                              <tr>
+                                <td>{{rd.dia}}mm</td>
+                              </tr>
+
+                            </tbody>
+                          </table>
+                    </td>
+
+                  </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,344 @@
+{% load static %}
+
+<div class="row">
+        <div class="col-md-8"><br>
+          <h3>TAVAN LEVHASI SİPARİŞ BİLGİLERİ</h3>
+          </div>
+          <div class=col-md-4>
+            <div class="table-responsive-md">
+              <table style="text-align: center;" class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>SİPARİŞ NO</th>
+                    <th>RENK</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>{{ rd.id }}</td>
+                    <td>{{ rd.color }}</td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+    </div>
+          </div>
+        </div></br>
+        <div class="row">
+
+            <div class="col-md-5">
+
+                <img src="{% static 'img/8/r_lb_le.jpg' %}" class="img-fluid" alt=""><br>
+            </div>
+            <div class=col-md-7>
+              <div class="table-responsive-md">
+                <table style="text-align: center;" class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>LEVHA RENGİ</th>
+                      <th>LEVHA KALINLIĞI</th>
+                      <th>ADET</th>
+                      <th>R (RADÜS)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr>
+                      <td>{{ rd.color }}</td>
+                      <td>1,5 mm</td>
+                      <td>2</td>
+                      <td>{{ r_radus_8 }} mm</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                {% if lb_le %}
+                <table style="text-align: center;" class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>LB</th>
+                      <th>LE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr>
+                      <td>{{ lb }}</td>
+                      <td>{{ le }}</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                {% endif %}
+
+      </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                  <div class='table-responsive-md'>
+
+                    <table style="text-align: center;" class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>3001 - 3500 ARASI</th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <tr>
+                          <td>
+
+                            <table style="text-align: center;" class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>LB1</th>
+                                  <th>LB2</th>
+                                  <th>LB3</th>
+                                  <th>LB4</th>
+                                  <th>LB5</th>
+                                  <th>R</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+
+                                <tr>
+                                  <td>{{ lb1_3001|floatformat:2 }}</td>
+                                  <td>{{ lb2_3001 }}</td>
+                                  <td>{{ lb3_3001|floatformat:2 }}</td>
+                                  <td>{{ lb4_3001 }}</td>
+                                  <td>{{ lb5_3001|floatformat:2 }}</td>
+                                  <td>{{ r_3001 }}</td>
+                                </tr>
+
+                              </tbody>
+                            </table>
+                            <table style="text-align: center;" class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>LE1</th>
+                                  <th>LE2</th>
+                                  <th>LE3</th>
+                                  <th>R</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+
+                                <tr>
+                                  <td>{{ le1_3001 }}</td>
+                                  <td>1000</td>
+                                  <td>1000</td>
+                                  <td>{{ r_3001 }}</td>
+                                </tr>
+
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                  </div>
+            </div>
+                <div class="row">
+                <div class="col-md-12">
+                  <div class='table-responsive-md'>
+
+                    <table style="text-align: center;" class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>3501 - 3900 ARASI</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <tr>
+                          <td>
+                            <table style="text-align: center;" class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>LB1</th>
+                                  <th>LB2</th>
+                                  <th>LB3</th>
+                                  <th>LB4</th>
+                                  <th>LB5</th>
+                                  <th>LB6</th>
+                                  <th>R</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+
+                                <tr>
+                                  <td>{{ lb1_2_3501|floatformat:2 }}</td>
+                                  <td>{{ lb1_2_3501|floatformat:4 }}</td>
+                                  <td>{{ lb3_3501 }}</td>
+                                  <td>{{ lb4_3501|floatformat:2 }}</td>
+                                  <td>{{ lb5_3501 }}</td>
+                                  <td>{{ lb6_3501|floatformat:4 }}</td>
+                                  <td>{{ r_3001 }}</td>
+                                </tr>
+
+                              </tbody>
+                            </table>
+                            <table style="text-align: center;" class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>LE1</th>
+                                  <th>LE2</th>
+                                  <th>LE3</th>
+                                  <th>LE4</th>
+                                  <th>R</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+
+                                <tr>
+                                  <td>{{ le1_3501 }}</td>
+                                  <td>{{ le2_3501 }}</td>
+                                  <td>980</td>
+                                  <td>980</td>
+                                  <td> {{ r_3001 }} </td>
+                                </tr>
+
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+
+                   <div class="row">
+
+                    <div class="col-md-12">
+
+                      <div class='table-responsive-md'>
+
+                        <table style="text-align: center;" class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th>3901 - 4000 ARASI</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+
+                            <tr>
+                              <td>
+                                <table style="text-align: center;" class="table table-bordered">
+                                  <thead>
+                                    <tr>
+                                      <th>LB1</th>
+                                      <th>LB2</th>
+                                      <th>LB3</th>
+                                      <th>LB4</th>
+                                      <th>LB5</th>
+                                      <th>LB6</th>
+                                      <th>R</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+
+                                    <tr>
+                                      <td>{{ lb1_3901|floatformat:2 }}</td>
+                                      <td>{{ lb2_3901|floatformat:3 }}</td>
+                                      <td>{{ lb3_3901 }}</td>
+                                      <td>{{ lb4_3901|floatformat:2 }}</td>
+                                      <td>{{ lb5_3901 }}</td>
+                                      <td>{{ lb6_3901|floatformat:4 }}</td>
+                                      <td>{{ r_3001 }}</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <table style="text-align: center;" class="table table-bordered">
+                                  <thead>
+                                    <tr>
+                                      <th>LE1</th>
+                                      <th>LE2</th>
+                                      <th>LE3</th>
+                                      <th>LE4</th>
+                                      <th>LE5</th>
+                                      <th>R</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+
+                                    <tr>
+                                      <td>{{ le1_3901 }}</td>
+                                      <td>{{ le1_3901 }}</td>
+                                      <td>1250</td>
+                                      <td>1250</td>
+                                      <td>-</td>
+                                      <td>{{ r_3001 }}</td>
+                                    </tr>
+
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+
+                    </div>
+
+                   </div>
+                   <hr>
+                   <div class="row">
+                    <div class="col-md-12" style="text-align: center;">
+                        <h3>ALIN LEVHASI SİPARİŞ BİLGİLERİ</h3>
+                        <img src="{% static 'img/8/lb_le2.jpg' %} " class="img-fluid" alt="">
+                    </div>
+                   </div>
+                   <div class="row">
+                    <div class="col-md-6">
+                        <div class="table-responsive-md">
+                    <table style="text-align: center;" class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>LEVHA RENGİ</th>
+                          <th>LEVHA KALINLIĞI</th>
+                          <th>ADET</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <tr>
+                          <td>{{ rd.color }}</td>
+                          <td>2 mm</td>
+                          <td>6</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="table-responsive-md">
+                    <table style="text-align: center;" class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>LB (LEVHA BOYU)</th>
+                          <th>LE (LEVHA ENİ)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <tr>
+                          <td>{{ lb_2 }} mm</td>
+                          <td>{{ le_2 }}</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                    </div>
+                  </div>
+                   </div>

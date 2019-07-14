@@ -1,7 +1,7 @@
 {% load static %}	
 
 	<!DOCTYPE html>
-	<html lang="zxx" class="no-js">
+	<html lang="tr" class="no-js">
 	<head>
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,6 +31,15 @@
 			<link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
 			<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">				
 			<link rel="stylesheet" href="{% static 'css/main.css' %}">
+			<script type="text/javascript">
+				function printDiv(divName) {
+					var printContents = document.getElementById(divName).innerHTML;
+					var originalContents = document.body.innerHTML;
+					document.body.innerHTML = printContents;
+					window.print();
+					document.body.innerHTML = originalContents;
+				}        
+			</script>
 		</head>
 		<body>	
 		  <header id="header">
@@ -57,7 +66,7 @@
 								  <img src="{% static 'img/user-icon.png' %}" class="img-fluid" width="15" height="15" alt=""> {{ request.user.get_username }}
 								</a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								  <a class="dropdown-item" style="color:black;" href="{% url 'revolvingdoor' %}">Hesap</a><br>
+								  <a class="dropdown-item" style="color:black;" href="{% url 'account' %}">Hesap</a><br>
 								  <a class="dropdown-item text-danger" href="{% url 'logout' %}">Çıkış Yap</a>
 								  
 								</div>

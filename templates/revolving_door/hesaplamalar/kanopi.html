@@ -1,0 +1,183 @@
+{% load static %}
+<h3 style="text-align: center;">KANOPİ İMALATI</h3><br>
+
+
+              <div class="row">
+
+
+                  <div class="col-md-12" style="text-align: center;">
+                        <img src="{% static 'img/kanopi/kanopi.png' %}" class="img-fluid" alt=""><br><br>
+                  </div>
+                </div>
+                  <div class="row">
+                    <div class="col-md-8" style="text-align: center;">
+
+                      <div class="table-responsive-md">
+                          <table style="text-align: center;" class="table table-bordered">
+                              <thead>
+                                <tr>
+                                    <th>
+                                        <span>140 mm</span>
+                                        <img class="img-fluid" width="200" height="150" src="{% static 'img/kanopi/us-ts-140.png' %}" alt=""> <br>
+                                    </th>
+                                     <th>{{ us_dis }} mm
+                                        {% if rd.canopy > 210 %} <img class="img-fluid" width="200" height="150" src="{% static 'img/kanopi/us-ts-70.png' %}" alt=""><br>
+                                        {% else %} <img class="img-fluid" width="200" height="150" src="{% static 'img/kanopi/us-ts-140.png' %}" alt="">{% endif %}<br></th>
+
+                                      </tr>
+
+                              </thead>
+                              <tbody>
+
+                                <tr>
+                                      <td>
+                                        <table style="text-align: center;" class="table table-bordered">
+                                          <thead>
+                                            <tr>
+                                              <th>TS DIŞ KESİM UZUNLUĞU (2 ADET)</th>
+                                              <th>TS DIŞ ÇAP</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+
+                                            <tr>
+                                              <td>{{ ts_dis_kesim }}mm</td>
+                                              <td>{{ ts_dis_cap }}</td>
+                                            </tr>
+
+                                          </tbody>
+                                        </table>
+                                      </td>
+                                      <td>
+
+                                            <table style="text-align: center;" class="table table-bordered">
+                                              <thead>
+                                                <tr>
+                                                  <th>US DIŞ KESİM UZUNLUĞU (2 ADET)</th>
+                                                  <th>US DIŞ ÇAP</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+
+                                                <tr>
+                                                  <td>{{ us_dis_kesim }} mm</td>
+                                                  <td>{{ us_dis_cap }}</td>
+                                                </tr>
+
+                                              </tbody>
+                                            </table>
+                                      </td>
+                                </tr>
+
+                              </tbody>
+                            </table>
+
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="table-responsive-md"><br><br><br><br><br>
+                        <table style="text-align: center;" class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th>Orta Sigma Bağlantı Ayağı</th>
+                                <th>Alt Sigma Bağlantı Ayağı</th>
+                                <th>Üst Sigma Bağlantı Ayağı</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+                              <tr>
+                                <td>4</td>
+                                <td>10</td>
+                                <td>10</td>
+                              </tr>
+
+                            </tbody>
+                          </table>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+
+                      <div class="table-responsive-md"><br><br>
+                        <table style=" text-align: center;" class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th ><img src="{% static 'img/kanopi/kbu-sbu.png' %}" class="img-fluid" alt=""></th>
+                                <th><img src="{% static 'img/kanopi/s1-s2-s3.png' %}" class="img-fluid" alt=""</th>
+                                <th><img src="{% static 'img/kanopi/u-prf.png' %}" class="img-fluid" alt=""</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+                              <tr>
+                                <td><table style="text-align: center;" class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                          <th>Kanopi Birleşim</th>
+                                          <th>KBU U Profil</th>
+                                          <th>SBU U Profil</th>
+
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+
+                                      <tr>
+                                        <td>{{ kanopi_birlesim }}mm</td>
+                                        <td>{{ kbu_u_profile }}mm </td>
+                                        <td>{{ sbu_u_profile }}mm </td>
+                                      </tr>
+
+                                    </tbody>
+                                  </table></td>
+                                <td>
+                                    <table style="text-align: center;" class="table table-bordered">
+                                        <thead>
+                                          <tr>
+                                              <th>S1 (4 ADET)</th>
+                                              <th>S2 (8 ADET)</th>
+                                              <th>S3 (3 ADET)</th>
+
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+
+                                          <tr>
+                                            <td>{{ s1 }}mm</td>
+                                            <td>{{ s2 }}mm</td>
+                                            <td>{{ s3 }}mm</td>
+                                          </tr>
+
+                                        </tbody>
+                                      </table>
+                                </td>
+                                <td>
+                                    <table style="text-align: center;" class="table table-bordered">
+                                        <thead>
+                                          <tr>
+                                              <th>U PRF DIŞ KESİM UZUNLUĞU (2 ADET)</th>
+                                              <th>U PROFİL DIŞ ÇAP</th>
+
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+
+                                          <tr>
+                                            <td>{{ u_prf_dis_kesim }}mm</td>
+                                            <td>{{ u_profile_dis_cap }}</td>
+                                          </tr>
+
+                                        </tbody>
+                                      </table>
+                                </td>
+                              </tr>
+
+                            </tbody>
+                          </table>
+
+                    </div>
+                </div>
+            </div>
+        

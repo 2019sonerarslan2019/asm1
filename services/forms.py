@@ -20,7 +20,6 @@ class RevolvingDoorForm(forms.ModelForm):
             'dia',
             'trans_height',
             'canopy',
-            'total_height',
             'wing',
             'fixed_glass',
             'fixed_glass_no',

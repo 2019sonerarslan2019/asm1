@@ -1,8 +1,34 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from .models import RevolvingDoor
-
 from .forms import RevolvingDoorForm
 import math
+###################Pdf
+from django.views.generic import View
+from django.template.loader import get_template
+from django.http import HttpResponse
+from myapp.utils import render_to_pdf
+
+class GeneratePDF(View):
+
+    def get(self,request,id,*args,**kwargs):
+
+        rd_pdf = get_object_or_404(RevolvingDoor,id=id)
+
+        template = get_template('other/invoice.html')
+        context = {
+            'id':id,
+            'rd_pdf':rd_pdf,
+        }
+        html = template.render(context)
+        pdf = render_to_pdf('other/invoice.html',context)
+
+        if pdf:
+            response = HttpResponse(pdf,content_type="application/pdf") 
+            filename = "%s_%s.pdf"%(str(rd_pdf.company),str(rd_pdf.id))
+            content = "inline ; filename=''%s" %(filename)
+            response['Content-Disposition'] = content   
+            return response
+        return HttpResponse('Not found')
 
 def revolving_door_view(request):
     
@@ -51,9 +77,11 @@ def YUVARLA(x):
 
 def detail_revolving_door_view(request,id):
     
-    rd = RevolvingDoor.objects.get(id=id)
+    rd = get_object_or_404(RevolvingDoor,id=id)
 
     if request.user.is_authenticated:
+        #-------------------------Is Emri
+        total_height = rd.trans_height + rd.canopy
 
         #--------------------------Kanopi
 
@@ -175,7 +203,6 @@ def detail_revolving_door_view(request,id):
         else: lb_3 = (int(rd.dia)-810)/2
 
         lb_3 = YUVARLA(lb_3)
-        #((Dışçap+242,5+242,5)*3,14/12)+70
         dy_3 = ((((int(rd.dia)+242.5)+242.5)*3.14)/12)+70
         iy_3 =((695*3.14)/12)+40
         r2_3 = ((int(rd.dia) -115)/2)+5
@@ -229,6 +256,40 @@ def detail_revolving_door_view(request,id):
 
         #-----------------9
 
+        if rd.ground_circle: kanopi_en = YUVARLA((rd.canopy * 2)+200)
+        else: kanopi_en = YUVARLA((rd.canopy * 2) + 100)   
+
+        if rd.night_sensor:
+            kanopi_yukseklik = (rd.dia/2)+200
+            kanopi_boy = rd.dia+300
+        else:
+            kanopi_yukseklik = (rd.dia/2)+100
+            kanopi_boy = rd.dia+100
+
+        sabit_kanat_en = YUVARLA(((rd.dia-94)/2)-((rd.dia-94)/4)*math.sqrt(3)+240)         
+        sabit_kanat_yukseklik = YUVARLA((((rd.dia-94)/2)+80))
+        sabit_kanat_boy = YUVARLA((rd.trans_height+45)+50)
+        
+        hareketli_kanat_en = 300
+        hareketli_kanat_yukseklik = YUVARLA((((rd.dia - 244)/2)+50))
+        hareketli_kanat_boy = YUVARLA(((rd.dia + 20)/10))
+
+        if rd.night_sensor:
+            gece_kalkani_en = YUVARLA(((rd.dia / 2)+ 38)- math.sin((74*3.141593)/180) * ((rd.dia / 2) + 38 ) + 120)
+            gece_kalkani_yukseklik = (((rd.dia / 2)+ 38)-30)*3.14/6+50
+            gece_kalkani_boy = (rd.trans_height + 20) / 10
+            
+
+        #-----------------9.1
+
+        dis_cap_9 = rd.dia - 4
+        dis_kesim_u = YUVARLA((((rd.dia - 4)*3.15)/2))
+        dis_cap_9_2 = rd.dia - 34
+        dis_kesim_u_2 = YUVARLA(((((rd.dia - 34)*3.14)/6)+15)-108) 
+        dis_kesim_u_3 =  YUVARLA((((((rd.dia - 34)*3.14)/6)*2)+40))
+        dis_cap_9_5 = (rd.dia - 34)- 60 
+        dis_kesim_u_5 = YUVARLA(((((rd.dia - 34) - 60)*3.14)/2)+40)
+
         context = {
             'rd':rd,
             'ph':int(ph),'pr':int(pr),'ch':int(ch),
@@ -247,7 +308,14 @@ def detail_revolving_door_view(request,id):
             'le1_3001':int(le1_3001),'lb1_2_3501':lb1_2_3501,'lb3_3501':int(lb3_3501),'lb4_3501':lb4_3501,
             'lb5_3501':int(lb5_3501),'lb6_3501':lb6_3501,'le1_3501':int(le1_3501),'le2_3501':int(le2_3501),
             'lb1_3901':lb1_3901,'lb2_3901':lb2_3901,'lb3_3901':int(lb3_3901),'lb4_3901':lb4_3901,
-            'lb5_3901':int(lb5_3901),'lb6_3901':lb6_3901,'le1_3901':int(le1_3901),
+            'lb5_3901':int(lb5_3901),'lb6_3901':lb6_3901,'le1_3901':int(le1_3901),'total_height':int(total_height),
+            'dis_cap_9':dis_cap_9,'dis_kesim_u':dis_kesim_u,'dis_cap_9_2':dis_cap_9_2,'dis_kesim_u_2':dis_kesim_u_2,'dis_kesim_u_3':dis_kesim_u_3,
+            'dis_cap_9_5':dis_cap_9_5,'dis_kesim_u_5':dis_kesim_u_5,'kanopi_en':int(kanopi_en),
+            'kanopi_yukseklik':int(kanopi_yukseklik),'kanopi_boy':int(kanopi_boy),'sabit_kanat_en':sabit_kanat_en,
+            'sabit_kanat_yukseklik':int(sabit_kanat_yukseklik),'sabit_kanat_boy':int(sabit_kanat_boy),
+            'hareketli_kanat_boy':int(hareketli_kanat_boy),'hareketli_kanat_en':int(hareketli_kanat_en),'hareketli_kanat_yukseklik':int(hareketli_kanat_yukseklik),
+            'gece_kalkani_en':int(gece_kalkani_en),'gece_kalkani_yukseklik':int(gece_kalkani_yukseklik),'gece_kalkani_boy':int(gece_kalkani_boy),
+            
         }
     
         return render(request,'revolving_door/detail-revolving-door.html',context)

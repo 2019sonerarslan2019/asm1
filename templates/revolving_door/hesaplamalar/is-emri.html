@@ -1,0 +1,132 @@
+{% load static %}
+
+<h3 style="text-align: center;">ATÖLYE İŞ EMRİ</h3>
+<div class="table-responsive-md">
+<table style="text-align: center;" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>FİRMA</th>
+        <th>CRM NO</th>
+        <th>TESLİM ŞEKLİ</th>
+        <th>TESLİM TARİHİ</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td>{{rd.company}}</td>
+        <td>{{rd.id}}</td>
+        <td>{{rd.delivery_method}}</td>
+        <td>{{rd.delivery_date}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="table-responsive-md">
+  <table style="text-align: left;" class="table table-bordered">
+      <thead>
+        <tr>
+          <th>SEVK ADRESİ</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td>{{rd.adress|safe}}<br></td>
+        </tr>
+
+      </tbody>
+    </table>
+    </div>
+  <br>
+<h3 style="text-align: center;">MR30/SA OTOMATİK DÖNER KAPI</h3>
+<div class="table-responsive-md">
+<table style="text-align: center;" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ÇAP</th>
+        <th>GEÇİŞ YÜKSEKLİĞİ</th>
+        <th>KANOPİ</th>
+        <th>TOPLAM YÜKSEKLİK</th>
+        <th>KANAT SAYISI</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td>{{rd.dia}}</td>
+        <td>{{rd.trans_height}}</td>
+        <td>{{rd.canopy}}</td>
+        <td>{{ total_height}}</td>
+        <td>{{ rd.wing }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+  </div>
+  <div class="table-responsive-md">
+  <table style="text-align: center;" class="table table-bordered">
+      <thead>
+        <tr>
+          <th>SABİT CAM</th>
+          <th>HAREKETLİ CAM</th>
+          <th>SABİT CAM ADEDİ</th>
+          <th>HAREKETLİ CAM ADEDİ</th>
+          <th>RENK</th>
+          <th>IŞIKLANDIRMA</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td>{{ rd.fixed_glass }}</td>
+          <td>{{ rd.moving_glass }}</td>
+          <td>{{ rd.fixed_glass_no }}</td>
+          <td>{{ rd.moving_glass_no }}</td>
+          <td>{{ rd.color }}</td>
+          <td>{{ rd.lighting }}</td>
+        </tr>
+
+      </tbody>
+    </table>
+    </div>
+    <div class="table-responsive-md">
+  <table style="text-align: center;" class="table table-bordered">
+      <thead>
+        <tr>
+          <th>KIRILAN KANAT</th>
+          <th>YER ÇEMBERİ</th>
+          <th>GECE KALKANI</th>
+          <th>TOPUK SENSÖRÜ</th>
+          <th>EL SENSÖRÜ</th>
+          <th>SPOT SCAN</th>
+          <th>İSPANYOLET KİLİT</th>
+          <th>PASLANMAZ KOL</th>
+          <th>BUTON DİREĞİ</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td> {% if rd.broken_wing  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+          <td> {% if rd.ground_circle  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+          <td> {% if rd.night_sensor  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+          <td> {% if rd.heel_sensor  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+          <td> {% if rd.hand_sensor  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+          <td> {% if rd.spot_scan  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+          <td> {% if rd.spain.key  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+          <td> {% if rd.stain_arm  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+          <td> {% if rd.button_pole  %} <img class="img-fluid" src="{% static 'img/icon-yes.svg' %}"> {% else %} <img class="img-fluid" src="{% static 'img/icon-no.svg' %}"> {% endif %}</td>
+
+        </tr>
+
+      </tbody>
+    </table>
+    </div>
+    <h3 style="text-align: center;">İMALAT NOTLARI</h3>
+    <div class="card">
+      <div class="card-body">
+        <p>{% if rd.notes %} {{ rd.notes|safe }} {% else %} <p>Not yok.</p> {% endif %}</p>
+      </div>
+    </div>

@@ -24,3 +24,9 @@ def logout_view(request):
         return redirect('home')
     else:
         return redirect('401')
+
+def accounts_view(request):
+
+    context = {}
+
+    return render(request,'user/hesap.html',context)
