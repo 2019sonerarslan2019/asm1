@@ -1,0 +1,127 @@
+{% load static %}
+<div class="row">
+
+    <div style="text-align: center;" class="col-md-12">
+        
+        <div class="table-responsive-md">
+            <table style="text-align: center;" class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>ÇİZİM</th>
+                    <th>KONTROL</th>
+                    <th>İMALAT ŞEFİ</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>
+                        <table style="text-align: center;" class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th>AD SOYAD</th>
+                                <th>ONAY</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+            
+                              <tr>
+                                <td>{{ rd.drawing }}</td>
+                                <td></td>
+                              </tr>
+            
+                            </tbody>
+                          </table>
+                    </td>
+                    <td>
+                        <table style="text-align: center;" class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th>AD SOYAD</th>
+                                <th>ONAY</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+            
+                              <tr>
+                                <td>{{ rd.control }}</td>
+                                <td></td>
+                              </tr>
+            
+                            </tbody>
+                          </table>
+                    </td>
+                    <td>
+                            <table style="text-align: center;" class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th>AD SOYAD</th>
+                                        <th>ONAY</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                    
+                                      <tr>
+                                        <td>{{ rd.manufacturing_chief }}</td>
+                                        <td></td>
+                                      </tr>
+                    
+                                    </tbody>
+                                  </table>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+        </div>
+
+    </div>
+</div>
+<div class="row">
+<div class="col-md-6" style="text-align: center;">
+    <div class="table-responsive-md">
+
+            <table style="text-align: center;" class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>İŞ EMRİ TARİHİ</th>
+                        <th>ÜRETİM TARİHİ</th>
+                        <th>TESLİM TARİHİ</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+    
+                      <tr>
+                        <td>{{ rd.published_date }}</td>
+                        <td></td>
+                        <td>{{ rd.delivery_date }}</td>
+                      </tr>
+    
+                    </tbody>
+                  </table>
+    </div>
+</div>
+<div class="col-md-4" style="text-align: center;">
+        <div class="table-responsive-md">
+                <table style="text-align: center;" class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>PROJE</th>
+                            <th>CRM NO</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+        
+                          <tr>
+                            <td>MR30/SA DÖNER KAPI ÜRETİM</td>
+                            <td>{{ rd.id }}</td>
+                          </tr>
+        
+                        </tbody>
+                      </table>
+        </div>
+</div>
+<div class="col-md-2" style="text-align: center;"><br>
+    <img class="img-fluid"  src="{% static 'img/agmlogo.png' %}" alt="">
+</div>
+</div>

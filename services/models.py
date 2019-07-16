@@ -37,7 +37,7 @@ lighting_data = (
 class RevolvingDoor(models.Model):
 
     company = models.CharField(max_length=300,verbose_name='Firma')
-    adress = RichTextField(verbose_name='Sevk Adresi')
+    adress = models.CharField(max_length=500,verbose_name='Sevk Adresi')
     delivery_date = models.DateTimeField(verbose_name='Teslim Tarihi')
     delivery_method = models.CharField(max_length=100,verbose_name='Teslim Şekli')
 
@@ -62,7 +62,10 @@ class RevolvingDoor(models.Model):
     button_pole = models.BooleanField(default=False,verbose_name='Buton Direği')
 
     notes = RichTextField(blank=True,null=True,verbose_name='Notlar')
-    
+
+    drawing = models.CharField(max_length=200,verbose_name='Çizim')
+    control = models.CharField(max_length=200,verbose_name='Kontrol')
+    manufacturing_chief = models.CharField(max_length=200,verbose_name='İmalat Şefi')  
 
     published_date = models.DateTimeField(auto_now_add=True)
 

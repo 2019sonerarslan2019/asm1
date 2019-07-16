@@ -37,6 +37,9 @@ class RevolvingDoorForm(forms.ModelForm):
             'stain_arm',
             'button_pole',
             'notes',
+            'drawing',
+            'control',
+            'manufacturing_chief',
         ]
 
 

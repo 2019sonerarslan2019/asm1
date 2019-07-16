@@ -2,33 +2,6 @@ from django.shortcuts import render,redirect,get_object_or_404
 from .models import RevolvingDoor
 from .forms import RevolvingDoorForm
 import math
-###################Pdf
-from django.views.generic import View
-from django.template.loader import get_template
-from django.http import HttpResponse
-from myapp.utils import render_to_pdf
-
-class GeneratePDF(View):
-
-    def get(self,request,id,*args,**kwargs):
-
-        rd_pdf = get_object_or_404(RevolvingDoor,id=id)
-
-        template = get_template('other/invoice.html')
-        context = {
-            'id':id,
-            'rd_pdf':rd_pdf,
-        }
-        html = template.render(context)
-        pdf = render_to_pdf('other/invoice.html',context)
-
-        if pdf:
-            response = HttpResponse(pdf,content_type="application/pdf") 
-            filename = "%s_%s.pdf"%(str(rd_pdf.company),str(rd_pdf.id))
-            content = "inline ; filename=''%s" %(filename)
-            response['Content-Disposition'] = content   
-            return response
-        return HttpResponse('Not found')
 
 def revolving_door_view(request):
     
@@ -53,7 +26,7 @@ def create_revolving_door_view(request):
         if form.is_valid():
             form.save()
 
-            return redirect('revolvingdoor')
+            return redirect('mr30')
             
 
         context = {
@@ -273,6 +246,10 @@ def detail_revolving_door_view(request,id):
         hareketli_kanat_en = 300
         hareketli_kanat_yukseklik = YUVARLA((((rd.dia - 244)/2)+50))
         hareketli_kanat_boy = YUVARLA(((rd.dia + 20)/10))
+
+        gece_kalkani_en = 0
+        gece_kalkani_yukseklik = 0
+        gece_kalkani_boy = 0
 
         if rd.night_sensor:
             gece_kalkani_en = YUVARLA(((rd.dia / 2)+ 38)- math.sin((74*3.141593)/180) * ((rd.dia / 2) + 38 ) + 120)

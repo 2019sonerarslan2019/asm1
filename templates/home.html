@@ -4,33 +4,128 @@
 {% block body %}
 <section class="services-area section-gap">
     <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="menu-content  col-lg-12">
-                <div class="title text-center">
-                                    <h1 class="mb-10">ASM - İŞ EMRİ</h1>
-                        <hr>
-                </div>
-                <br>
-            </div>
-        </div>						
         {% if request.user.is_authenticated %}
             
             <div class="filters-content">
                 <div class="row grid">
                                              
-                    <div class="single-portfolio col-sm-4 all raster">
+                    <div class="single-portfolio col-sm-3 all raster">
                       <div class="relative">
                         <div class="thumb">
-                            <a href="{% url 'revolvingdoor' %}">
+                            <a href="{% url 'mr30' %}">
                             <div class="overlay overlay-bg"></div>
                           
                            <img class="image img-fluid"  src="{% static 'img/door.jpg' %}" alt=""></a>
                         </div>
                       </div>
                         <div class="p-inner">
-                            <a href="{% url 'revolvingdoor' %}"><h4 style="text-align: center;">MR30/SA OTOMATİK DÖNER KAPI</h4></a>
+                            <a href="{% url 'mr30' %}"><h4 style="text-align: center;">MR30</h4></a>
                         </div>
                     </div>
+                    <div class="single-portfolio col-sm-3 all raster">
+                        <div class="relative">
+                          <div class="thumb">
+                              <a href="#">
+                              <div class="overlay overlay-bg"></div>
+                            
+                             <img class="image img-fluid"  src="{% static 'img/door.jpg' %}" alt=""></a>
+                          </div>
+                        </div>
+                          <div class="p-inner">
+                              <a href="#"><h4 style="text-align: center;">GRA</h4></a>
+                          </div>
+                      </div>
+                      <div class="single-portfolio col-sm-3 all raster">
+                        <div class="relative">
+                          <div class="thumb">
+                              <a href="#">
+                              <div class="overlay overlay-bg"></div>
+                            
+                             <img class="image img-fluid"  src="{% static 'img/door.jpg' %}" alt=""></a>
+                          </div>
+                        </div>
+                          <div class="p-inner">
+                              <a href="#"><h4 style="text-align: center;">GLA</h4></a>
+                          </div>
+                      </div>
+                      <div class="single-portfolio col-sm-3 all raster">
+                        <div class="relative">
+                          <div class="thumb">
+                              <a href="#">
+                              <div class="overlay overlay-bg"></div>
+                            
+                             <img class="image img-fluid"  src="{% static 'img/door.jpg' %}" alt=""></a>
+                          </div>
+                        </div>
+                          <div class="p-inner">
+                              <a href="#"><h4 style="text-align: center;">M-CAM</h4></a>
+                          </div><br>
+                      </div>
+                      <div class="single-portfolio col-sm-3 all raster">
+                        <div class="relative">
+                          <div class="thumb">
+                              <a href="#">
+                              <div class="overlay overlay-bg"></div>
+                            
+                             <img class="image img-fluid"  src="{% static 'img/door.jpg' %}" alt=""></a>
+                          </div>
+                        </div>
+                          <div class="p-inner">
+                              <a href="#"><h4 style="text-align: center;">CRS</h4></a>
+                          </div>
+                      </div>
+                      <div class="single-portfolio col-sm-3 all raster">
+                        <div class="relative">
+                          <div class="thumb">
+                              <a href="#">
+                              <div class="overlay overlay-bg"></div>
+                            
+                             <img class="image img-fluid"  src="{% static 'img/door.jpg' %}" alt=""></a>
+                          </div>
+                        </div>
+                          <div class="p-inner">
+                              <a href="#"><h4 style="text-align: center;">SLD</h4></a>
+                          </div>
+                      </div>
+                      <div class="single-portfolio col-sm-3 all raster">
+                        <div class="relative">
+                          <div class="thumb">
+                              <a href="#">
+                              <div class="overlay overlay-bg"></div>
+                            
+                             <img class="image img-fluid"  src="{% static 'img/door.jpg' %}" alt=""></a>
+                          </div>
+                        </div>
+                          <div class="p-inner">
+                              <a href="#"><h4 style="text-align: center;">HRM</h4></a>
+                          </div>
+                      </div>
+                      <div class="single-portfolio col-sm-3 all raster">
+                        <div class="relative">
+                          <div class="thumb">
+                              <a href="#">
+                              <div class="overlay overlay-bg"></div>
+                            
+                             <img class="image img-fluid"  src="{% static 'img/door.jpg' %}" alt=""></a>
+                          </div>
+                        </div>
+                          <div class="p-inner">
+                              <a href="#"><h4 style="text-align: center;">ICU</h4></a>
+                          </div>
+                      </div>
+                      <div class="single-portfolio col-sm-3 all raster">
+                        <div class="relative">
+                          <div class="thumb">
+                              <a href="#">
+                              <div class="overlay overlay-bg"></div>
+                            
+                             <img class="image img-fluid"  src="{% static 'img/door.jpg' %}" alt=""></a>
+                          </div>
+                        </div>
+                          <div class="p-inner">
+                              <a href="#"><h4 style="text-align: center;">SMG</h4></a>
+                          </div>
+                      </div>
                 </div>
             </div>
             {% else %}

@@ -10,6 +10,6 @@ urlpatterns = [
     path('giris/',login_view,name='login'),
     path('cikis/',logout_view,name="logout"),
     path('401/',view_401,name='401'),
-    path('doner-kapi/',include('services.urls')),
+    path('sistem/',include('services.urls')),
     path('hesap/',accounts_view,name="account"),
 ]

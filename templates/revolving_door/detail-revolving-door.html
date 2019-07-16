@@ -10,8 +10,7 @@
             </div>
 
             <div class="col-md-4" style="text-align: right;">
-
-                 Oluşturan : <b style="color:black;">GokhanSuzen</b>  <br>
+<br>
                 {{ rd.published_date }}
             </div>
         </div>
@@ -58,15 +57,17 @@
           <div class="tab-content bg-white p-4 p-md-5 ftco-animate card" id="v-pills-tabContent">
               <!-- İş Emri -->
             <div class="tab-pane py-2 fade show active card-body " id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
-                <div  style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a></div>
+                <div  style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a> </div>
                   <div id='divYazdir'>
 
                 {% include 'revolving_door/hesaplamalar/is-emri.html/' %}
+                <br>
+                {% include 'revolving_door/attendant.html' %}
                 </div>
             </div>
             <!-- Genel -->
             <div class="tab-pane  fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
-                <div  style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir2');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a></div>
+                <div  style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir2');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
                   <div id='divYazdir2'>
 
                 {% include 'revolving_door/hesaplamalar/genel.html/' %}
@@ -74,7 +75,7 @@
               </div>
             <!-- Kanopi -->
             <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
-                <div  style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir3');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a></div>
+                <div  style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir3');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
                 <div id='divYazdir3'>
               {% include 'revolving_door/hesaplamalar/kanopi.html/' %}
                 </div>
@@ -82,14 +83,14 @@
               
             <!-- Kanopi Reçete -->
             <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-day-4-tab">
-                <div  style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir4');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a></div>
+                <div  style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir4');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
                 <div id='divYazdir4'>
               {% include 'revolving_door/hesaplamalar/kanopi-recete.html/' %}
                 </div>
             </div>
             <!-- 3 -->
             <div class="tab-pane fade" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-day-5-tab">
-                <div  style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir5');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a></div>
+                <div  style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir5');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
                 <div id='divYazdir5'>
               {% include 'revolving_door/hesaplamalar/3.html/' %}
                 </div>
@@ -98,7 +99,7 @@
 
 
             <div class="tab-pane fade" id="v-pills-6" role="tabpanel" aria-labelledby="v-pills-day-6-tab">
-                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir6');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a></div>
+                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir6');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
                 <div id='divYazdir6'>
               {% include 'revolving_door/hesaplamalar/4.html/' %}
                 </div>
@@ -106,7 +107,7 @@
               <!-- 5 -->
             <div class="tab-pane fade" id="v-pills-7" role="tabpanel" aria-labelledby="v-pills-day-7-tab">
 
-                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir7');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a></div>
+                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir7');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
                 <div id='divYazdir7'>
               {% include 'revolving_door/hesaplamalar/5.html/' %}
                 </div>
@@ -116,7 +117,7 @@
             <!-- 6 -->
             <div class="tab-pane fade" id="v-pills-8" role="tabpanel" aria-labelledby="v-pills-day-8-tab">
 
-                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir8');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a></div>
+                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir8');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
                 <div id='divYazdir8'>
               {% include 'revolving_door/hesaplamalar/6.html/' %}
                 </div>
@@ -125,7 +126,7 @@
             <!--  7 -->
             <div class="tab-pane fade" id="v-pills-9" role="tabpanel" aria-labelledby="v-pills-day-9-tab">
               
-                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir9');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a></div>
+                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir9');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
                 <div id='divYazdir9'>
               {% include 'revolving_door/hesaplamalar/7.html/' %}
                 </div>
@@ -135,7 +136,7 @@
             <!-- 8 -->
 
             <div class="tab-pane fade" id="v-pills-10" role="tabpanel" aria-labelledby="v-pills-day-10-tab">
-                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir10');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a></div>
+                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir10');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
                 <div id='divYazdir10'>
               {% include 'revolving_door/hesaplamalar/8.html/' %}
                 </div>
@@ -143,14 +144,14 @@
 
               <!-- 9 -->
             <div class="tab-pane fade" id="v-pills-11" role="tabpanel" aria-labelledby="v-pills-day-11-tab">
-                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir11');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a></div>
+                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir11');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
                 <div id='divYazdir11'>
               {% include 'revolving_door/hesaplamalar/9.html/' %}
                 </div>
               </div>
               <!-- 9.1 -->
             <div class="tab-pane fade" id="v-pills-12" role="tabpanel" aria-labelledby="v-pills-day-12-tab">
-                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir12');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a></div>
+                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir12');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
                 <div id='divYazdir12'>
               {% include 'revolving_door/hesaplamalar/9-1.html/' %}
                 </div>

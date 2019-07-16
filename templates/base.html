@@ -6,7 +6,7 @@
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Favicon-->
-		<link rel="shortcut icon" href="img/fav.png">
+		<link rel="shortcut icon" href="{% static 'img/fav.png' %}">
 		<!-- Author Meta -->
 		<meta name="author" content="colorlib">
 		<!-- Meta Description -->
@@ -57,7 +57,7 @@
 							  İŞ EMRİ
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							  <a class="dropdown-item" style="color:black;" href="{% url 'revolvingdoor' %}">MR30/SA OTOMATİK DÖNER KAPI</a>
+							  <a class="dropdown-item" style="color:black;" href="{% url 'mr30' %}">MR30</a>
 							</div>
 						  </li>
 
@@ -85,6 +85,47 @@
             
 
             {% endblock %}
+			
+			<footer  class="page-footer font-small blue pt-4">
+
+					<div  class="container-fluid text-center text-md-left">
+				  
+					  <div class="row">
+						<div class="col-md-6 mt-md-0 mt-3" style="background-color:#04091e;">
+				  
+				  <br>
+						  <h5 class="text-uppercase" style="color:white">ASM</h5>
+				  
+						</div>
+				  
+						<hr class="clearfix w-100 d-md-none pb-3">
+				  
+						
+						<div class="col-md-2 mb-md-0 mb-2" style="background-color:#04091e;">
+				  
+						
+							  </div>
+						<div class="col-md-2 mb-md-0 mb-2" style=" background-color:#04091e; text-align: right;">
+								<br>
+				  
+						  <a href="" ><h4 style="color:white; ">HAKKIMIZDA</h4></a>
+				  
+						</div>
+						<div class="col-md-2 mb-md-0 mb-2" style="background-color:#04091e; text-align: center;">
+				  
+				  <br>
+						  <a href=""><h4 style="color:white; text-align: center;">İLETİŞİM</h4></a>
+						</div>
+				  
+					  </div>
+				  
+					</div>
+					<div style="background-color: #04091e;" class="footer-copyright text-center py-3">© 2019 Copyright
+						<b style="color:white;">ASM</b>
+						
+					</div>
+				  
+				  </footer>
 
 
 			<script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
