@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from captcha.fields import ReCaptchaField
+from services.models import RevolvingDoor
 
 class LoginForm(forms.Form):
 
@@ -21,4 +22,51 @@ class LoginForm(forms.Form):
                 raise forms.ValidationError("Kullanıcı adı veya parola hatalı!")
 
         return super(LoginForm, self).clean()
+
+class DeleteFORM(forms.Form):
+     captcha = forms.IntegerField(label='İşlemi Doğrula :  5 + 0 = ? ')
+
+     def clean(self):
+
+        data = self.cleaned_data.get('captcha')
+        if data:
+
+            if data != 5:
+                raise forms.ValidationError('Sonuç yanlış !')
+        return super(DeleteFORM,self).clean()        
+
+class UpdateMR30Form(forms.ModelForm):
+
+    class Meta:
+        model = RevolvingDoor
+
+        fields = [
+            'company',
+            'adress',
+            'delivery_method',
+            'delivery_date',
+            'dia',
+            'trans_height',
+            'canopy',
+            'wing',
+            'fixed_glass',
+            'fixed_glass_no',
+            'moving_glass',
+            'moving_glass_no',
+            'color',
+            'lighting',
+            'broken_wing',
+            'ground_circle',
+            'night_sensor',
+            'heel_sensor',
+            'hand_sensor',
+            'spot_scan',
+            'spain_key',
+            'stain_arm',
+            'button_pole',
+            'notes',
+            'drawing',
+            'control',
+            'manufacturing_chief',
+        ]
 

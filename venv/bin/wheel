@@ -1,4 +1,4 @@
-#!/home/gokhan/Masaüstü/mysite2/venv/bin/python3.6
+#!/home/gokhan/Masaüstü/asm/venv/bin/python3.6
 # -*- coding: utf-8 -*-
 import re
 import sys

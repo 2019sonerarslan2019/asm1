@@ -66,7 +66,7 @@
 								  <img src="{% static 'img/user-icon.png' %}" class="img-fluid" width="15" height="15" alt=""> {{ request.user.get_username }}
 								</a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								  <a class="dropdown-item" style="color:black;" href="{% url 'account' %}">Hesap</a><br>
+								  <a class="dropdown-item" style="color:black;" href="{% url 'history' %}">İşlem Geçmişi</a><br>
 								  <a class="dropdown-item text-danger" href="{% url 'logout' %}">Çıkış Yap</a>
 								  
 								</div>
@@ -85,10 +85,10 @@
             
 
             {% endblock %}
-			
-			<footer  class="page-footer font-small blue pt-4">
+		<br><br><br><br>	
+			<footer style=" background-color:#04091e;"  class="page-footer font-small blue pt-4">
 
-					<div  class="container-fluid text-center text-md-left">
+					<div class="container-fluid text-center text-md-left">
 				  
 					  <div class="row">
 						<div class="col-md-6 mt-md-0 mt-3" style="background-color:#04091e;">
@@ -114,7 +114,7 @@
 						<div class="col-md-2 mb-md-0 mb-2" style="background-color:#04091e; text-align: center;">
 				  
 				  <br>
-						  <a href=""><h4 style="color:white; text-align: center;">İLETİŞİM</h4></a>
+						  <a href=""><h4 style="color:white; text-align: right;">İLETİŞİM</h4></a>
 						</div>
 				  
 					  </div>

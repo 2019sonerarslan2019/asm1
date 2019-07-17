@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<section class="services-area section-gap">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <a href="{% url 'home' %}">Ana Sayfa</a> / Sistem / <a href="{% url 'mr30' %}">MR30</a> / Detay / {{ rd.id }} <br><br>
+        </div>
+      </div>
+        <div class="row">
+           
+            <div class="col-md-8">
+              
+            <b style="color:black;">MR30/SA OTOMATİK DÖNER KAPI</b>
+            <div>{{ rd.company }}</div>
+            </div>
+
+            <div class="col-md-4" style="text-align: right;">
+              Oluşturan{% if rd.user.get_full_name %}
+                 {{ rd.user.get_full_name }}
+                {% else %}
+                 {{ rd.user.username }}
+                {% endif %}<br>
+                {{ rd.published_date }}
+            </div>
+        </div>
+        <hr>
+</div>
+
+<section class="ftco-section">
+  <div class="container">
+
+    <div class="ftco-departments">
+      <div class="row">
+        <div class="col-md-8 nav-link-wrap">
+          <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link ftco-animate active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">İş Emri</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Genel</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Kanopi</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">Kanopi Reçete</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-5-tab" data-toggle="pill" href="#v-pills-5" role="tab" aria-controls="v-pills-5" aria-selected="false">3</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-6-tab" data-toggle="pill" href="#v-pills-6" role="tab" aria-controls="v-pills-5" aria-selected="false">4</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-7-tab" data-toggle="pill" href="#v-pills-7" role="tab" aria-controls="v-pills-5" aria-selected="false">5</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-8-tab" data-toggle="pill" href="#v-pills-8" role="tab" aria-controls="v-pills-5" aria-selected="false">6</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-9-tab" data-toggle="pill" href="#v-pills-9" role="tab" aria-controls="v-pills-5" aria-selected="false">7</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-10-tab" data-toggle="pill" href="#v-pills-10" role="tab" aria-controls="v-pills-5" aria-selected="false">8</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-11-tab" data-toggle="pill" href="#v-pills-11" role="tab" aria-controls="v-pills-5" aria-selected="false">9</a>
+
+            <a class="nav-link ftco-animate" id="v-pills-12-tab" data-toggle="pill" href="#v-pills-12" role="tab" aria-controls="v-pills-5" aria-selected="false">9.1</a>
+          </div>
+        </div>
+       
+         
+        <div class="col-md-12 tab-wrap">
+          <br>
+
+          <div class="tab-content bg-white p-4 p-md-5 ftco-animate card" id="v-pills-tabContent">
+              <!-- İş Emri -->
+            <div class="tab-pane py-2 fade show active card-body " id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
+                <div  style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" data-toggle="modal" data-target="#exampleModalCenter" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a> </div>
+                  <div id='divYazdir'>
+
+                {% include 'mr30/hesaplamalar/is-emri.html/' %}
+                <br>
+                {% include 'mr30/attendant.html' %}
+                </div>
+            </div>
+            <!-- Genel -->
+            <div class="tab-pane  fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
+                <div  style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir2');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
+                  <div id='divYazdir2'>
+
+                {% include 'mr30/hesaplamalar/genel.html/' %}
+                <br>
+                {% include 'mr30/attendant.html' %}
+                  </div>
+              </div>
+            <!-- Kanopi -->
+            <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
+                <div  style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir3');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
+                <div id='divYazdir3'>
+              {% include 'mr30/hesaplamalar/kanopi.html/' %}
+              <br>
+              {% include 'mr30/attendant.html' %}
+                </div>
+            </div>
+              
+            <!-- Kanopi Reçete -->
+            <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-day-4-tab">
+                <div  style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir4');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
+                <div id='divYazdir4'>
+              {% include 'mr30/hesaplamalar/kanopi-recete.html/' %}
+              <br>
+              {% include 'mr30/attendant.html' %}
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="tab-pane fade" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-day-5-tab">
+                <div  style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir5');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
+                <div id='divYazdir5'>
+              {% include 'mr30/hesaplamalar/3.html/' %}
+              <br>
+              {% include 'mr30/attendant.html' %}
+                </div>
+
+                    </div>
+
+
+            <div class="tab-pane fade" id="v-pills-6" role="tabpanel" aria-labelledby="v-pills-day-6-tab">
+                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir6');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
+                <div id='divYazdir6'>
+              {% include 'mr30/hesaplamalar/4.html/' %}
+              <br>
+              {% include 'mr30/attendant.html' %}
+                </div>
+            </div>
+              <!-- 5 -->
+            <div class="tab-pane fade" id="v-pills-7" role="tabpanel" aria-labelledby="v-pills-day-7-tab">
+
+                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir7');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
+                <div id='divYazdir7'>
+              {% include 'mr30/hesaplamalar/5.html/' %}
+              <br>
+              {% include 'mr30/attendant.html' %}
+                </div>
+              
+            </div>
+
+            <!-- 6 -->
+            <div class="tab-pane fade" id="v-pills-8" role="tabpanel" aria-labelledby="v-pills-day-8-tab">
+
+                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir8');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
+                <div id='divYazdir8'>
+              {% include 'mr30/hesaplamalar/6.html/' %}
+              <br>
+              {% include 'mr30/attendant.html' %}
+                </div>
+              
+            </div>
+            <!--  7 -->
+            <div class="tab-pane fade" id="v-pills-9" role="tabpanel" aria-labelledby="v-pills-day-9-tab">
+              
+                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir9');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
+                <div id='divYazdir9'>
+              {% include 'mr30/hesaplamalar/7.html/' %}
+              <br>
+              {% include 'mr30/attendant.html' %}
+                </div>
+
+            </div>
+
+            <!-- 8 -->
+
+            <div class="tab-pane fade" id="v-pills-10" role="tabpanel" aria-labelledby="v-pills-day-10-tab">
+                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir10');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
+                <div id='divYazdir10'>
+              {% include 'mr30/hesaplamalar/8.html/' %}
+              <br>
+              {% include 'mr30/attendant.html' %}
+                </div>
+             </div>
+
+              <!-- 9 -->
+            <div class="tab-pane fade" id="v-pills-11" role="tabpanel" aria-labelledby="v-pills-day-11-tab">
+                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir11');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
+                <div id='divYazdir11'>
+              {% include 'mr30/hesaplamalar/9.html/' %}
+              <br>
+              {% include 'mr30/attendant.html' %}
+              
+                </div>
+              </div>
+              <!-- 9.1 -->
+            <div class="tab-pane fade" id="v-pills-12" role="tabpanel" aria-labelledby="v-pills-day-12-tab">
+                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir12');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-dark" href="#"><img width="38" height="38"  src="{% static 'img/mail-icon.png' %}" alt=""> Gönder</a></div>
+                <div id='divYazdir12'>
+              {% include 'mr30/hesaplamalar/9-1.html/' %}
+              <br>
+              {% include 'mr30/attendant.html' %}
+                </div>
+          </div>
+  </section>
+
+
+</section>
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Email Gönder</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          İçerik , Başlık bilgisi , mesaj vs vs...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">İptal</button>
+          <button type="button" class="btn btn-primary">Gönder</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

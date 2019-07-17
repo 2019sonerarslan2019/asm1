@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<section class="services-area section-gap">
+    
+    <div class="container">
+        <a href="{% url 'home' %}">Ana Sayfa</a> / <a href="{% url 'history' %}">İşlem Geçmişi</a> / MR30
+        
+        <h1 style="text-align: center;"> {{ request.user.username }} <b>|</b> İşlem Geçmişi</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">  <h4>MR30/SA OTOMATİK DÖNER KAPI</h4></div>
+            <div class="col-md-6" style="text-align: right;">
+              
+        </div>
+        </div>
+        <div class="card">
+          <div class="card-cody">
+
+         
+        <div class="table-responsive-md">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+                <th>CRM NO</th>
+              <th>Firma</th>
+              <th>Teslim Tarihi</th>
+              <th>Kayıt Zamanı</th>
+              <th>Detaylar</th>
+              <th>Güncelle</th>
+              <th>Sil</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for x in user1_data %}
+            <tr>
+                <th>{{ x.id }}</th>
+              <td>{{x.company}}</td>
+              <td>{{x.delivery_date}}</td>
+              <td>{{x.published_date|timesince}} önce</td>
+              <td><a href="{% url 'detailmr30' id=x.id %}" ><div class="btn btn-primary btn-sm">Görüntüle</div></a></td>
+              <td><a href="{% url 'updatemr30' id=x.id %}" ><div class="btn btn-warning btn-sm">Güncelle</div></a></td>
+              <td><a href="{% url 'deletemr30' id=x.id %}" ><div class="btn btn-danger btn-sm">Sil</div></a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+      </div>
+</section>
+
+{% endblock %}

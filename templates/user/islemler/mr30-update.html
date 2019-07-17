@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+<section class="services-area section-gap">
+        
+<div class="container">
+       <a href="{% url 'home' %}">Ana Sayfa</a> / <a href="{% url 'history' %}">İşlem Geçmişi</a> / <a href="{% url 'mr30_history' %}">MR30</a> / Güncelle / {{ id }} <br><br><br>
+      <div class="row" style="text-align:center;">
+          <div class="col-md-2 col-sm-2">
+            </div>
+        <div class="col-md-8 col-sm-8">
+          <h3 class="text-dark">{{title}}</h3>
+          <div class="card">
+              <div class="card-body">
+          <form  method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form|crispy }}
+          {{ form.media }}<br>
+          <input class="btn btn-outline-success btn-sm" type="submit" value="Güncelle"></input>
+          </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-2">
+          </div>
+      </div>
+      </div>
+    </div>
+      </section>
+
+{% endblock %}

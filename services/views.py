@@ -14,7 +14,7 @@ def revolving_door_view(request):
             'rd':rd,
         }
 
-        return render(request,'revolving_door/revolving-door.html',context)
+        return render(request,'mr30/mr30.html',context)
     else:
         return redirect('401')
 
@@ -24,6 +24,8 @@ def create_revolving_door_view(request):
         form = RevolvingDoorForm(request.POST or None)
 
         if form.is_valid():
+            mr30 = form.save(commit=False)
+            mr30.user = request.user    
             form.save()
 
             return redirect('mr30')
@@ -33,7 +35,7 @@ def create_revolving_door_view(request):
             'form':form,
         }
 
-        return render(request,'revolving_door/create-revolving-door.html',context)
+        return render(request,'mr30/create-mr30.html',context)
     else:
         return redirect('401')
 
@@ -62,13 +64,11 @@ def detail_revolving_door_view(request,id):
         if rd.canopy > 210:
             us_dis = 70
 
-        ts_dis_kesim = ((int(rd.dia)-4)*3.14)/2
-        if ts_dis_kesim > float(int(ts_dis_kesim)) + .001: ts_dis_kesim = int(ts_dis_kesim) + 1    
+        ts_dis_kesim = YUVARLA(((int(rd.dia)-4)*3.14)/2)
 
         ts_dis_cap = int(rd.dia)- 4  
 
-        us_dis_kesim =  ((int(rd.dia)-4)*3.14)/2
-        if us_dis_kesim > float(int(us_dis_kesim)) + .001: us_dis_kesim = int(us_dis_kesim) + 1
+        us_dis_kesim =  YUVARLA(((int(rd.dia)-4)*3.14)/2)
 
         us_dis_cap = int(rd.dia) - 4   
 
@@ -78,49 +78,37 @@ def detail_revolving_door_view(request,id):
 
         s1 = math.sqrt(((rd.dia/2)-40)**2-(330**2))*2
         s1 = YUVARLA(s1)        
-        s2 = (int(rd.dia)/2)-345
-        if s2 > float(int(s2)+.001) : s2 = int(s2) + 1
-        s3 = ((int(rd.dia)/2)-355)-35
-        if s3 > float(int(s3)+.001) : s3 = int(s3) + 1
+        s2 = YUVARLA((int(rd.dia)/2)-345)
+        s3 = YUVARLA(((int(rd.dia)/2)-355)-35)
 
-        u_prf_dis_kesim = ((int(rd.dia)-94)*3.14)/2
-        if u_prf_dis_kesim > float(int(u_prf_dis_kesim) + .001): u_prf_dis_kesim = int(u_prf_dis_kesim) + 1
+        u_prf_dis_kesim = YUVARLA(((int(rd.dia)-94)*3.14)/2)
         u_profile_dis_cap = int(rd.dia) - 94
 
 
         #--------------------------3
         
         #sabit kanat dograma
-        ph = float(rd.trans_height) + 45
-        if ph > float(int(ph))+.001: ph = int(ph) + 1
+        ph = YUVARLA(float(rd.trans_height) + 45)
 
-        pr = (float(rd.dia)-34)/2
-        if pr > float(int(pr))+.001: pr = int(pr) + 1
+        pr = YUVARLA((float(rd.dia)-34)/2)
 
-        iydograma = (((float(rd.dia)-94)*3.14)/6)+15
-        if iydograma > float(int(iydograma))+.001: iydograma = int(iydograma) + 1
+        iydograma = YUVARLA((((float(rd.dia)-94)*3.14)/6)+15)
 
-        dydograma = (((float(rd.dia)-34)*3.14)/6)+15
-        if dydograma > float(int(dydograma))+.001: dydograma = int(dydograma) + 1
+        dydograma = YUVARLA((((float(rd.dia)-34)*3.14)/6)+15)
 
-        ik = ((((float(rd.dia)-94)*3.14)/6)+15)-108
-        if ik > float(int(ik))+.001: ik = int(ik) + 1
-        #(((ÇAP-34)*3,14)/6)+15-108
-        dk_3 = ((((rd.dia-34)*3.14)/6)+15)-108 
-        dk_3 = YUVARLA(dk_3)
+        ik = YUVARLA(((((float(rd.dia)-94)*3.14)/6)+15)-108)
+
+        dk_3 = YUVARLA(((((rd.dia-34)*3.14)/6)+15)-108) 
 
         #sabit kanat lamine cam
         ch_sabit_kanat = (rd.trans_height+45)-73
         ch_sabit_kanat = YUVARLA(ch_sabit_kanat)
 
-        cr = (float(rd.dia)-68)/2
-        if cr > float(int(cr))+.001: cr = int(cr) + 1
+        cr = YUVARLA((float(rd.dia)-68)/2)
 
-        iycam = (((float(rd.dia)-86)*3.14)/6)-67
-        if iycam > float(int(iycam))+.001: iycam = int(iycam) + 1
+        iycam = YUVARLA((((float(rd.dia)-86)*3.14)/6)-67)
         
-        dycam = (((float(rd.dia)-68)*3.14)/6)-67
-        if dycam > float(int(dycam))+.001: dycam = int(dycam) + 1
+        dycam = YUVARLA((((float(rd.dia)-68)*3.14)/6)-67)
 
         #---------------------4
 
@@ -148,8 +136,7 @@ def detail_revolving_door_view(request,id):
         dy = ((((int(rd.dia)-115)*3.14)/12)+40)
         dy = YUVARLA(dy)
         
-        iy = ((695*3.14)/12)+40
-        if iy > float(int(iy)) + .001 : iy = int(iy) + 1
+        iy = YUVARLA(((695*3.14)/12)+40)
         
         r2 =  (int(rd.dia)-115)/2 
 
@@ -295,6 +282,6 @@ def detail_revolving_door_view(request,id):
             
         }
     
-        return render(request,'revolving_door/detail-revolving-door.html',context)
+        return render(request,'mr30/detail-mr30.html',context)
     else:
         return redirect('401')    

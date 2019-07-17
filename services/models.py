@@ -1,6 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
-
+from django.contrib.auth.models import User
 
 fixed_glass_data = (
     ('4bombeliseffaflamine','4+4 Bombeli Şeffaf Lamine'),
@@ -35,7 +35,8 @@ lighting_data = (
 )
 
 class RevolvingDoor(models.Model):
-
+    
+    user = models.ForeignKey('auth.User',on_delete=models.CASCADE)
     company = models.CharField(max_length=300,verbose_name='Firma')
     adress = models.CharField(max_length=500,verbose_name='Sevk Adresi')
     delivery_date = models.DateTimeField(verbose_name='Teslim Tarihi')
@@ -71,6 +72,7 @@ class RevolvingDoor(models.Model):
 
     def __str__(self):
         return self.company
+
 
     class Meta:
         verbose_name_plural = 'MR30/SA OTOMATİK DÖNER KAPI'

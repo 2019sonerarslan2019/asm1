@@ -1,4 +1,4 @@
-#!/home/gokhan/Masaüstü/mysite2/venv/bin/python
+#!/home/gokhan/Masaüstü/asm/venv/bin/python
 
 import sys
 import getopt
