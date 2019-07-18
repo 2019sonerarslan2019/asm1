@@ -2,6 +2,9 @@ from django.shortcuts import render,redirect,get_object_or_404
 from .models import RevolvingDoor
 from .forms import RevolvingDoorForm
 import math
+from .forms import EmailForm
+from myapp.utils import send_mail
+
 
 def revolving_door_view(request):
     
@@ -20,19 +23,36 @@ def revolving_door_view(request):
 
 def create_revolving_door_view(request):
     if request.user.is_authenticated:
+        dia_error = False
+        trans_error = False
+        canopy_error = False
 
         form = RevolvingDoorForm(request.POST or None)
 
         if form.is_valid():
-            mr30 = form.save(commit=False)
-            mr30.user = request.user    
-            form.save()
 
-            return redirect('mr30')
+            dia = form.cleaned_data.get('dia')
+            trans_height = form.cleaned_data.get('trans_height')
+            canopy = form.cleaned_data.get('canopy')
             
+            if dia < 1600 or dia > 4000:
+                dia_error = True
+            if trans_height < 1900 or trans_height > 4000:
+                trans_error = True
+            if canopy < 100 or canopy > 1500:
+                canopy_error = True    
+            if dia_error == False and trans_error == False and canopy_error == False  :
 
+                mr30 = form.save(commit=False)
+                mr30.user = request.user 
+                form.save()
+
+                return redirect('mr30')
         context = {
             'form':form,
+            'dia_error':dia_error,
+            'trans_error':trans_error,
+            'canopy_error':canopy_error,
         }
 
         return render(request,'mr30/create-mr30.html',context)
@@ -48,7 +68,7 @@ def YUVARLA(x):
     else: 
         return x    
 
-    
+   
 
 def detail_revolving_door_view(request,id):
     
@@ -254,8 +274,47 @@ def detail_revolving_door_view(request,id):
         dis_cap_9_5 = (rd.dia - 34)- 60 
         dis_kesim_u_5 = YUVARLA(((((rd.dia - 34) - 60)*3.14)/2)+40)
 
+        form = EmailForm(request.POST or None)
+        email_data = []
+        if form.is_valid():
+            subject = form.cleaned_data.get('subject')
+            template_name = 'mr30/hesaplamalar/is-emri.html'
+            to = form.cleaned_data.get('to')
+            email_data.append(to)
+            context = {
+            'rd':rd,'form':form,
+            'ph':int(ph),'pr':int(pr),'ch':int(ch),
+            'cr':int(cr),'iydograma':int(iydograma),'dydograma':int(dydograma),
+            'iycam':int(iycam),'dycam':int(dycam),'ik':int(ik),'dk_3':int(dk_3),'us_dis':int(us_dis),
+            'ts_dis_kesim':int(ts_dis_kesim),'ts_dis_cap':int(ts_dis_cap),
+            'us_dis_kesim':int(us_dis_kesim),'us_dis_cap':int(us_dis_cap),
+            'kanopi_birlesim':int(kanopi_birlesim),'kbu_u_profile':int(kbu_u_profile),'sbu_u_profile':int(sbu_u_profile),
+            's1':int(s1),'s2':int(s2),'s3':int(s3),'u_prf_dis_kesim':int(u_prf_dis_kesim),'u_profile_dis_cap':u_profile_dis_cap,
+            'k1':int(k1),'dk_4':int(dk_4),'ad':int(ad),'kb':int(kb),'kl':int(kl),'ch_sabit_kanat':int(ch_sabit_kanat),'cl':int(cl),
+            'ek':int(ek),'k2':int(k2),'lb':int(lb),'dy':int(dy),'iy':int(iy),'r2':float(r2),
+            'lb_2':int(lb_2),'dy_2':int(dy_2),'iy_2':int(iy_2),'r2_2':float(r2_2),'sm':float(sm),
+            'lb_3':int(lb_3),'dy_3':int(dy_3),'iy_3':int(iy_3),'r2_3':r2_3,'r_radus_8':int(r_radus_8),'lb':int(lb),'le':int(le),
+            'lb_le':lb_le,'le_2':int(le_2),'lb_2':int(lb_2),'lb1_3001':lb1_3001,'lb2_3001':int(lb2_3001),
+            'lb3_3001':lb3_3001,'lb4_3001':int(lb4_3001),'lb5_3001':lb5_3001,'r_3001':int(r_3001),
+            'le1_3001':int(le1_3001),'lb1_2_3501':lb1_2_3501,'lb3_3501':int(lb3_3501),'lb4_3501':lb4_3501,
+            'lb5_3501':int(lb5_3501),'lb6_3501':lb6_3501,'le1_3501':int(le1_3501),'le2_3501':int(le2_3501),
+            'lb1_3901':lb1_3901,'lb2_3901':lb2_3901,'lb3_3901':int(lb3_3901),'lb4_3901':lb4_3901,
+            'lb5_3901':int(lb5_3901),'lb6_3901':lb6_3901,'le1_3901':int(le1_3901),'total_height':int(total_height),
+            'dis_cap_9':dis_cap_9,'dis_kesim_u':dis_kesim_u,'dis_cap_9_2':dis_cap_9_2,'dis_kesim_u_2':dis_kesim_u_2,'dis_kesim_u_3':dis_kesim_u_3,
+            'dis_cap_9_5':dis_cap_9_5,'dis_kesim_u_5':dis_kesim_u_5,'kanopi_en':int(kanopi_en),
+            'kanopi_yukseklik':int(kanopi_yukseklik),'kanopi_boy':int(kanopi_boy),'sabit_kanat_en':sabit_kanat_en,
+            'sabit_kanat_yukseklik':int(sabit_kanat_yukseklik),'sabit_kanat_boy':int(sabit_kanat_boy),
+            'hareketli_kanat_boy':int(hareketli_kanat_boy),'hareketli_kanat_en':int(hareketli_kanat_en),'hareketli_kanat_yukseklik':int(hareketli_kanat_yukseklik),
+            'gece_kalkani_en':int(gece_kalkani_en),'gece_kalkani_yukseklik':int(gece_kalkani_yukseklik),'gece_kalkani_boy':int(gece_kalkani_boy),
+            
+        }
+
+            send_mail(subject,template_name,context,to)
+
+             
+
         context = {
-            'rd':rd,
+            'rd':rd,'form':form,
             'ph':int(ph),'pr':int(pr),'ch':int(ch),
             'cr':int(cr),'iydograma':int(iydograma),'dydograma':int(dydograma),
             'iycam':int(iycam),'dycam':int(dycam),'ik':int(ik),'dk_3':int(dk_3),'us_dis':int(us_dis),

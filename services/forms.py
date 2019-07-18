@@ -3,9 +3,7 @@ from django import forms
 
 
 
-
 class RevolvingDoorForm(forms.ModelForm):
-    
     delivery_date = forms.DateTimeField(widget = forms.SelectDateWidget,label="Teslim Tarihi")
 
     class Meta:
@@ -43,3 +41,7 @@ class RevolvingDoorForm(forms.ModelForm):
         ]
 
 
+class EmailForm(forms.Form):
+    subject = forms.CharField(max_length=300,label="Başlık")
+    to = forms.EmailField(label="Email")
+    
