@@ -1,0 +1,88 @@
+{% load static %}
+
+   
+<div class="row">
+        <div class="col-md-12" style="text-align: center;">
+            <h3>GECE KALKANI ALIN LEVHASI SİPARİŞ BİLGİLERİ</h3>
+            <img src="{% static 'img/8/lb_le2.jpg' %} " class="img-fluid" alt="">
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-md-6">
+            <div class="table-responsive-md">
+        <table style="text-align: center;" class="table table-bordered">
+          <thead>
+            <tr>
+              <th>LEVHA KALINLIĞI</th>
+              <th>ADET</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>2 mm</td>
+              <td>3</td>
+            </tr>
+
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div class="col-md-6">
+          <div class="table-responsive-md">
+        <table style="text-align: center;" class="table table-bordered">
+          <thead>
+            <tr>
+              <th>LB (LEVHA BOYU)</th>
+              <th>LE (LEVHA ENİ)</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>{{ lb_gece }} mm</td>
+              <td>{{ le_gece }}</td>
+            </tr>
+
+          </tbody>
+        </table>
+        </div>
+      </div>
+       </div>
+
+
+
+       <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+                <h3>GECE KALKANI ÜST LEVHASI SİPARİŞ BİLGİLERİ</h3>
+                <img src="{% static 'img/gece_kalkani/gece_kalkani_levha.jpg' %} " class="img-fluid" alt="">
+            </div>
+           </div>
+           <div class="row">
+          <div class="col-md-12">
+              <div class="table-responsive-md">
+            <table style="text-align: center;" class="table table-bordered">
+              <thead>
+                <tr>
+                    <th>D</th>
+                    <th>D1</th>
+                  <th>A (DIŞ YAY UZUNLUĞU)</th>
+                  <th>B  (İÇ YAY UZUNLUĞU)</th>
+                  <th>LEVHA SAYISI</th>
+                </tr>
+              </thead>
+              <tbody>
+    
+                <tr>
+                  <td>{{ d_2 }} mm</td>
+                  <td>{{ d1_2 }} mm</td>
+                  <td>{{ a_dis_yay }} mm</td>
+                  <td>{{ b_ic_yay }} mm</td>
+                  <td>3</td>
+                </tr>
+    
+              </tbody>
+            </table>
+            </div>
+          </div>
+           </div>

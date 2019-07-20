@@ -14,7 +14,7 @@
                 <tbody>
 
                   <tr>
-                    <td>{{ rd.id }}</td>
+                    <td>{{ rd.crm_no }}</td>
                   </tr>
 
                 </tbody>
@@ -35,8 +35,8 @@
                   <thead>
                     <tr>
                       <th>EN (mm)</th>
-                      <th>YÜKSEKLİK (mm)</th>
                       <th>BOY (mm)</th>
+                      <th>YÜKSEKLİK (mm)</th>
                       <th>AYAK (mm)</th>
                       <th>ADET</th>
                     </tr>
@@ -44,8 +44,8 @@
                   <tbody>
                     <tr>
                       <td>{{ kanopi_en }}</td>
-                      <td>{{ kanopi_yukseklik }}</td>
                       <td>{{ kanopi_boy }}</td>
+                      <td>{{ kanopi_yukseklik }}</td>
                       <td>100</td>
                       <td>1</td>
                     </tr>
@@ -65,8 +65,8 @@
                     <thead>
                       <tr>
                         <th>EN (mm)</th>
-                        <th>YÜKSEKLİK (mm)</th>
                         <th>BOY (mm)</th>
+                        <th>YÜKSEKLİK (mm)</th>
                         <th>AYAK (mm)</th>
                         <th>ADET</th>
                       </tr>
@@ -74,8 +74,8 @@
                     <tbody>
                       <tr>
                         <td>{{ sabit_kanat_en }}</td>
-                        <td>{{ sabit_kanat_yukseklik }}</td>
                         <td>{{ sabit_kanat_boy }}</td>
+                        <td>{{ sabit_kanat_yukseklik }}</td>
                         <td>100</td>
                         <td>1</td>
                       </tr>
@@ -95,17 +95,27 @@
                       <thead>
                         <tr>
                           <th>EN (mm)</th>
-                          <th>YÜKSEKLİK (mm)</th>
                           <th>BOY (mm)</th>
+                          <th>YÜKSEKLİK (mm)</th>
                           <th>AYAK (mm)</th>
                           <th>ADET</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>{{ hareketli_kanat_en }}</td>
-                          <td> {{ hareketli_kanat_yukseklik }} </td>
+                          <td>
+                            {% if rd.mr30_type ==  "OTOMATİK" %}
+                            {{ hareketli_kanat_en }}
+                            {% else %}
+                              {% if rd.wing == 3 %}
+                                  230
+                              {% else %}
+                                  280
+                              {% endif %}
+                            {% endif %}
+                          </td>
                           <td>{{ hareketli_kanat_boy }}</td>
+                          <td> {{ hareketli_kanat_yukseklik }} </td>
                           <td>100</td>
                           <td>1</td>
                         </tr>
@@ -126,8 +136,8 @@
                         <thead>
                           <tr>
                             <th>EN (mm)</th>
-                            <th>YÜKSEKLİK (mm)</th>
                             <th>BOY (mm)</th>
+                            <th>YÜKSEKLİK (mm)</th>
                             <th>AYAK (mm)</th>
                             <th>ADET</th>
                           </tr>
@@ -135,8 +145,8 @@
                         <tbody>
                           <tr>
                               <td>{{ gece_kalkani_en }}</td>
-                              <td>{{ gece_kalkani_yukseklik }}</td>
                               <td>{{ gece_kalkani_boy }}</td>
+                              <td>{{ gece_kalkani_yukseklik }}</td>
                               <td>100</td>
                               <td>1</td>
                           </tr>

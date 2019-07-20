@@ -9,20 +9,19 @@ class RevolvingDoorForm(forms.ModelForm):
     class Meta:
         model = RevolvingDoor
 
-     
         fields = [
             'company',
+            'crm_no',
             'adress',
             'delivery_method',
             'delivery_date',
+            'mr30_type',
             'dia',
             'trans_height',
             'canopy',
             'wing',
             'fixed_glass',
-            'fixed_glass_no',
             'moving_glass',
-            'moving_glass_no',
             'color',
             'lighting',
             'broken_wing',
@@ -40,8 +39,3 @@ class RevolvingDoorForm(forms.ModelForm):
             'manufacturing_chief',
         ]
 
-
-class EmailForm(forms.Form):
-    subject = forms.CharField(max_length=300,label="Başlık")
-    to = forms.EmailField(label="Email")
-    

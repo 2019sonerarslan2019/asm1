@@ -41,7 +41,7 @@
                             <tbody>
 
                               <tr>
-                                <td>{{ dk }} mm</td>
+                                <td>{{ dk_4 }} mm</td>
                               </tr>
 
                             </tbody>
@@ -97,8 +97,12 @@
                 <thead>
                   <tr>
                     <th>
+                      {% if rd.stain_arm %}
+                      <img height="200" width="110"  src="{% static 'img/cam2.jpg' %}" class="img-fluid" alt="">
+                      {% else %}
                         <img height="200" width="110"  src="{% static 'img/4/ch-cl.jpg' %}" class="img-fluid" alt="">
-                    </th>
+                      {% endif %}
+                      </th>
                     <th>
                         <img height="200" width="200"  src="{% static 'img/4/ek.jpg' %}" class="img-fluid" alt="">
                     </th>
@@ -132,7 +136,7 @@
                         <table style="text-align: center;" class="table table-bordered">
                             <thead>
                               <tr>
-                                <th>EK (KENET KESİM)</th>
+                                <th>EK (ETEK KESİM)</th>
                               </tr>
                             </thead>
                             <tbody>

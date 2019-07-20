@@ -10,8 +10,15 @@
           <img  src="{% static 'img/genel/genel_g1.jpg' %}" class="img-fluid" alt="">
         </th>
         <th>
-            <img src="{% static 'img/genel/genel_g2.jpg' %}"  class="img-fluid" alt="">
-
+          {% if rd.wing == 3 %}
+          {% if rd.night_sensor %}
+          <img src="{% static 'img/genel/genel_night_3wing.jpg' %}"  class="img-fluid" alt="">
+          {% else %}
+          <img src="{% static 'img/genel/genel_g2_kanat3.jpg' %}"  class="img-fluid" alt="">
+          {% endif %}
+          {% else %}
+          <img src="{% static 'img/genel/genel_g2_kanat4.jpg' %}"  class="img-fluid" alt="">
+          {% endif %}
         </th>
                   </tr>
                 </thead>
@@ -43,12 +50,18 @@
                             <thead>
                               <tr>
                                 <th> D (ÇAP)</th>
+                                {% if rd.night_sensor %}
+                                <th>D1 (GECE KALKANI DIŞ ÇAP)</th>
+                                {% endif %}
                               </tr>
                             </thead>
                             <tbody>
 
                               <tr>
                                 <td>{{rd.dia}}mm</td>
+                                {% if rd.night_sensor %}
+                                <td>{{ d1_genel }}</td>
+                                {% endif %}
                               </tr>
 
                             </tbody>

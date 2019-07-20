@@ -14,7 +14,7 @@
 
       <tr>
         <td>{{rd.company}}</td>
-        <td>{{rd.id}}</td>
+        <td>{{rd.crm_no}}</td>
         <td>{{rd.delivery_method}}</td>
         <td>{{rd.delivery_date}}</td>
       </tr>
@@ -39,7 +39,7 @@
     </table>
     </div>
   <br>
-<h3 style="text-align: center;">MR30/SA OTOMATİK DÖNER KAPI</h3>
+<h3 style="text-align: center;">MR30/SA {{ rd.mr30_type }} DÖNER KAPI</h3>
 <div class="table-responsive-md">
 <table style="text-align: center;" class="table table-bordered">
     <thead>
@@ -81,8 +81,8 @@
         <tr>
           <td>{{ rd.fixed_glass }}</td>
           <td>{{ rd.moving_glass }}</td>
-          <td>{{ rd.fixed_glass_no }}</td>
-          <td>{{ rd.moving_glass_no }}</td>
+          <td>4</td>
+          <td>{{ rd.wing }}</td>
           <td>{{ rd.color }}</td>
           <td>{{ rd.lighting }}</td>
         </tr>

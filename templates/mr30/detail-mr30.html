@@ -13,7 +13,7 @@
            
             <div class="col-md-8">
               
-            <b style="color:black;">MR30/SA OTOMATİK DÖNER KAPI</b>
+            <b style="color:black;">MR30/SA {{ rd.mr30_type }} DÖNER KAPI</b>
             <div>{{ rd.company }}</div>
             </div>
 
@@ -34,7 +34,7 @@
 
     <div class="ftco-departments">
       <div class="row">
-        <div class="col-md-8 nav-link-wrap">
+        <div class="col-md-12 nav-link-wrap">
           <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <a class="nav-link ftco-animate active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">İş Emri</a>
 
@@ -59,6 +59,12 @@
             <a class="nav-link ftco-animate" id="v-pills-11-tab" data-toggle="pill" href="#v-pills-11" role="tab" aria-controls="v-pills-5" aria-selected="false">9</a>
 
             <a class="nav-link ftco-animate" id="v-pills-12-tab" data-toggle="pill" href="#v-pills-12" role="tab" aria-controls="v-pills-5" aria-selected="false">9.1</a>
+            {% if rd.night_sensor %}
+
+            <a class="nav-link ftco-animate" id="v-pills-13-tab" data-toggle="pill" href="#v-pills-13" role="tab" aria-controls="v-pills-5" aria-selected="false">GK 3 HK</a>
+            <a class="nav-link ftco-animate" id="v-pills-14-tab" data-toggle="pill" href="#v-pills-14" role="tab" aria-controls="v-pills-5" aria-selected="false">GK 3 Ray</a>
+            <a class="nav-link ftco-animate" id="v-pills-15-tab" data-toggle="pill" href="#v-pills-15" role="tab" aria-controls="v-pills-5" aria-selected="false">GK 3 K Alın Levha</a>
+            {% endif %}
           </div>
         </div>
        
@@ -190,6 +196,33 @@
               <br>
               {% include 'mr30/attendant.html' %}
                 </div>
+          </div>
+          <!-- GK 3 HK -->
+           <div class="tab-pane fade" id="v-pills-13" role="tabpanel" aria-labelledby="v-pills-day-12-tab">
+              <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir13');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a>  </div>
+              <div id='divYazdir13'>
+            {% include 'mr30/hesaplamalar/night_sensor/gk3_hk.html' %}
+            <br>
+            {% include 'mr30/attendant.html' %}
+                  </div>
+            </div>
+            <!-- GK 3 Ray -->
+            <div class="tab-pane fade" id="v-pills-14" role="tabpanel" aria-labelledby="v-pills-day-12-tab">
+                <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir14');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a>  </div>
+                <div id='divYazdir14'>
+              {% include 'mr30/hesaplamalar/night_sensor/gk3_ray.html' %}
+              <br>
+              {% include 'mr30/attendant.html' %}
+                </div>
+            </div>
+            <!-- GK 3 K Alın Levha -->
+          <div class="tab-pane fade" id="v-pills-15" role="tabpanel" aria-labelledby="v-pills-day-12-tab">
+              <div style="text-align: right;"><a class="text-dark" href="javascript:printDiv('divYazdir15');" ><img src="{% static 'img/yazdir.png' %}" width="30" height="30" alt=""> Yazdır </a>  </div>
+              <div id='divYazdir15'>
+                  {% include 'mr30/hesaplamalar/night_sensor/gk3_k_al.html' %}
+            <br>
+            {% include 'mr30/attendant.html' %}
+              </div>
           </div>
   </section>
 

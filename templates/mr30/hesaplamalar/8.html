@@ -16,7 +16,7 @@
                 <tbody>
 
                   <tr>
-                    <td>{{ rd.id }}</td>
+                    <td>{{ rd.crm_no }}</td>
                     <td>{{ rd.color }}</td>
                   </tr>
 
@@ -76,6 +76,7 @@
       </div>
             </div>
             </div>
+            {% if lb3_3001_status %}
             <div class="row">
                 <div class="col-md-12">
                   <div class='table-responsive-md'>
@@ -144,6 +145,8 @@
                   </div>
                   </div>
             </div>
+            {% endif %}
+            {% if lb_3501_status %}
                 <div class="row">
                 <div class="col-md-12">
                   <div class='table-responsive-md'>
@@ -214,8 +217,9 @@
                   </div>
                 </div>
               </div>
+              {% endif %}
 
-
+              {% if lb_3901_status %}
                    <div class="row">
 
                     <div class="col-md-12">
@@ -291,6 +295,7 @@
                     </div>
 
                    </div>
+                   {% endif %}
                    <hr>
                    <div class="row">
                     <div class="col-md-12" style="text-align: center;">
@@ -314,7 +319,7 @@
                         <tr>
                           <td>{{ rd.color }}</td>
                           <td>2 mm</td>
-                          <td>6</td>
+                          <td>4</td>
                         </tr>
 
                       </tbody>
