@@ -80,14 +80,26 @@ def mr30_update_views(request,id):
 
         data = get_object_or_404(RevolvingDoor,id=id)
         form = UpdateMR30Form(request.POST or None,instance=data)
-
+        ral_error = False
         if form.is_valid():
-            update_post = form.save()
-            
-            return redirect('history')
+            color = form.cleaned_data.get('color')
+            ral_color_code = form.cleaned_data.get('ral_color_code')
+            if color == 'Ral Boya':
+                if ral_color_code:
+
+                    update_post = form.save()
+                    return redirect('history')
+                else:
+                    ral_error = True
+            else:
+                update_post = form.save()
+                return redirect('history')
+
+                
         context = {
             'form':form,
             'id':id,
+            'ral_error':ral_error,
         }
         return render(request,'user/islemler/mr30-update.html',context)
 
@@ -98,18 +110,19 @@ def mr30_update_views(request,id):
 def mr30_delete_views(request,id):
 
     if request.user.is_authenticated:
+        data = RevolvingDoor.objects.get(id=id)
 
         form = DeleteFORM(request.POST or None)
         
         if form.is_valid():
 
-            data = RevolvingDoor.objects.get(id=id)
             data.delete()
             return redirect('mr30_history')
 
         context = {
             'id':id,
             'form':form,
+            'data':data,
         }
         
         return render(request,'user/islemler/mr30-delete.html',context)

@@ -17,7 +17,12 @@
 
                   <tr>
                     <td>{{ rd.crm_no }}</td>
-                    <td>{{ rd.color }}</td>
+                    <td>{% if rd.color == 'Ral Boya' %} 
+                        {{ rd.color}} ({{rd.ral_color_code}})
+                        {% else %}  
+                          {{ rd.color }}
+                        {% endif %}
+                      </td>
                   </tr>
 
                 </tbody>
@@ -30,14 +35,21 @@
 
             <div class="col-md-5">
 
-                <img src="{% static 'img/8/r_lb_le.jpg' %}" class="img-fluid" alt=""><br>
-            </div>
+                {% if img_3000 %}
+                <img src="{% static 'img/8/3000.jpg' %}" class="img-fluid" alt=""><br>
+                {% endif %}
+                {% if img_3500 %}
+                <img src="{% static 'img/8/3001-3500.png' %}" class="img-fluid" alt=""><br>
+                {% endif %}
+                {% if img_4000 %}
+                <img src="{% static 'img/8/3501-4000.png' %}" class="img-fluid" alt=""><br>
+                {% endif %}
+              </div>
             <div class=col-md-7>
               <div class="table-responsive-md">
                 <table style="text-align: center;" class="table table-bordered">
                   <thead>
                     <tr>
-                      <th>LEVHA RENGİ</th>
                       <th>LEVHA KALINLIĞI</th>
                       <th>ADET</th>
                       <th>R (RADÜS)</th>
@@ -46,7 +58,6 @@
                   <tbody>
 
                     <tr>
-                      <td>{{ rd.color }}</td>
                       <td>1,5 mm</td>
                       <td>2</td>
                       <td>{{ r_radus_8 }} mm</td>
@@ -65,7 +76,7 @@
                   <tbody>
 
                     <tr>
-                      <td>{{ lb }}</td>
+                      <td>{{ lb_8_1 }}</td>
                       <td>{{ le }}</td>
                     </tr>
 
@@ -76,7 +87,7 @@
       </div>
             </div>
             </div>
-            {% if lb3_3001_status %}
+            {% if lb_3001_status %}
             <div class="row">
                 <div class="col-md-12">
                   <div class='table-responsive-md'>
@@ -182,7 +193,7 @@
                                   <td>{{ lb4_3501|floatformat:2 }}</td>
                                   <td>{{ lb5_3501 }}</td>
                                   <td>{{ lb6_3501|floatformat:4 }}</td>
-                                  <td>{{ r_3001 }}</td>
+                                  <td>{{ r_3501 }}</td>
                                 </tr>
 
                               </tbody>
@@ -204,7 +215,7 @@
                                   <td>{{ le2_3501 }}</td>
                                   <td>980</td>
                                   <td>980</td>
-                                  <td> {{ r_3001 }} </td>
+                                  <td> {{ r_3501 }} </td>
                                 </tr>
 
                               </tbody>
@@ -257,7 +268,7 @@
                                       <td>{{ lb4_3901|floatformat:2 }}</td>
                                       <td>{{ lb5_3901 }}</td>
                                       <td>{{ lb6_3901|floatformat:4 }}</td>
-                                      <td>{{ r_3001 }}</td>
+                                      <td>{{ r_3901 }}</td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -280,7 +291,7 @@
                                       <td>1250</td>
                                       <td>1250</td>
                                       <td>-</td>
-                                      <td>{{ r_3001 }}</td>
+                                      <td>{{ r_3901 }}</td>
                                     </tr>
 
                                   </tbody>
@@ -338,7 +349,7 @@
                       <tbody>
 
                         <tr>
-                          <td>{{ lb_2 }} mm</td>
+                          <td>{{ lb_8_2 }} mm</td>
                           <td>{{ le_2 }}</td>
                         </tr>
 

@@ -185,9 +185,11 @@ def detail_revolving_door_view(request,id):
         #--------------------7
         #--------Levha 1    
         lb = 0
-        if int(rd.dia) > 3600: lb = (((int(rd.dia)/2)-57.5)-487.5)
-        else: lb = (int(rd.dia)-810)/2
-        lb = YUVARLA(lb)
+        if int(rd.dia) > 3600:
+            lb = YUVARLA((((int(rd.dia)/2)-57.5)-487.5))
+        else:
+            lb = YUVARLA((int(rd.dia)-810)/2)
+        
 
         dy = ((((int(rd.dia)-115)*3.14)/12)+40)
         dy = YUVARLA(dy)
@@ -226,26 +228,31 @@ def detail_revolving_door_view(request,id):
         #-------8
             
         r_radus_8 = (int(rd.dia)-10)/2
-
+        img_3000 = False
+        img_3500 = False
+        img_4000 = False
         if int(rd.dia) <= 3000:
+            img_3000 = True
             lb_le = True
         else:
             lb_le = False
 
-        lb = 0
+           
+
+        lb_8_1 = 0
         le = 0
         
         if lb_le:
-            lb = int(rd.dia)-10
+            lb_8_1 = int(rd.dia)-10
             le = ((int(rd.dia)-10)/2)+20   
         
         if rd.wing == 3:
 
             le_2 = int(rd.canopy) + 30          
-            lb_2 = YUVARLA(((((rd.dia*3.14)/6)+400)/10))*10
+            lb_8_2 = YUVARLA(((((rd.dia*3.14)/6)+400)/10))*10
         else:
             le_2 = int(rd.canopy) + 30          
-            lb_2 = YUVARLA(((((rd.dia*3.14)/4)+400)/10))*10
+            lb_8_2 = YUVARLA(((((rd.dia*3.14)/4)+400)/10))*10
 
         lb1_3001 = 0
         lb2_3001 = 0
@@ -262,6 +269,7 @@ def detail_revolving_door_view(request,id):
         lb6_3501 = 0
         le1_3501 = 0
         le2_3501 = 0
+        r_3501 = 0
 
         lb1_3901 = 0
         lb2_3901 = 0
@@ -270,10 +278,11 @@ def detail_revolving_door_view(request,id):
         lb5_3901 = 0
         lb6_3901 = 0
         le1_3901 = 0
+        r_3901 = 0
 
         lb_3001_status = False
-        #--------------3001 - 3501 ARASI
-        if rd.dia >= 3001 and rd.dia <= 3501:
+        #--------------3001 - 3500 ARASI
+        if rd.dia >= 3001 and rd.dia <= 3500:
             lb1_3001 = math.sqrt((((rd.dia-10)/2)**2)-(960**2))*2
             lb2_3001 =  (((rd.dia-10)/2)+20)
             lb3_3001 = math.sqrt((((rd.dia-10)/2)**2)-(980**2))+20
@@ -281,12 +290,12 @@ def detail_revolving_door_view(request,id):
             lb5_3001 = math.sqrt((((rd.dia-10)/2)**2)-(980**2))+20
             r_3001 = (rd.dia-10)/2
             le1_3001 = ((rd.dia-10)/2)-960
-
-            lb1_3001_status = True
+            img_3500 = True
+            lb_3001_status = True
 
         lb_3501_status = False
-        #--------------3501 - 3901 ARASI
-        if rd.dia >= 3501 and rd.dia <= 3901:
+        #--------------3501 - 3900 ARASI
+        if rd.dia >= 3501 and rd.dia <= 3900:
 
             lb1_2_3501 = math.sqrt((((rd.dia-10)/2)**2)-(960**2))+20
             lb3_3501 = ((rd.dia-10)/2)+20
@@ -296,8 +305,10 @@ def detail_revolving_door_view(request,id):
 
             le1_3501 = ((rd.dia-10)/2)-960
             le2_3501 = ((rd.dia-10)/2)-960
-
+            r_3501 = (rd.dia-10)/2
+            img_4000 = True
             lb_3501_status = True
+
 
         lb_3901_status = False
         #--------------3901 - 4000 ARASI
@@ -309,11 +320,11 @@ def detail_revolving_door_view(request,id):
             lb4_3901 = math.sqrt((((rd.dia-10)/2)**2)-(1230**2))+20
             lb5_3901 = ((rd.dia-10)/2)+20
             lb6_3901 = math.sqrt((((rd.dia-10)/2)**2)-(1230**2))+20
-
             le1_3901 = ((rd.dia-10)/2)-1210
-
-            lb_3501_status = True
-
+            r_3901 = (rd.dia-10)/2
+            lb_3901_status = True
+            img_4000 = True
+        
         #-----------------9
 
         if rd.ground_circle: kanopi_en = YUVARLA((rd.canopy * 2)+200)
@@ -332,7 +343,7 @@ def detail_revolving_door_view(request,id):
         
         hareketli_kanat_en = 300
         hareketli_kanat_yukseklik = YUVARLA((((rd.dia - 244)/2)+50))
-        hareketli_kanat_boy = YUVARLA(((rd.dia + 20)/10))
+        hareketli_kanat_boy = YUVARLA(((rd.dia - 94 )/2) +80)
 
         gece_kalkani_en = 0
         gece_kalkani_yukseklik = 0
@@ -426,9 +437,9 @@ def detail_revolving_door_view(request,id):
             'k1':int(k1),'dk_4':int(dk_4),'ad':int(ad),'kb':int(kb),'kl':int(kl),'ch_sabit_kanat':int(ch_sabit_kanat),'cl':int(cl),
             'ek':int(ek),'k2':int(k2),'lb':int(lb),'dy':int(dy),'iy':int(iy),'r2':float(r2),
             'lb_2':int(lb_2),'dy_2':int(dy_2),'iy_2':int(iy_2),'r2_2':float(r2_2),'sm':float(sm),
-            'lb_3':int(lb_3),'dy_3':int(dy_3),'iy_3':int(iy_3),'r2_3':r2_3,'r_radus_8':int(r_radus_8),'lb':int(lb),'le':int(le),
-            'lb_le':lb_le,'le_2':int(le_2),'lb_2':int(lb_2),'lb1_3001':lb1_3001,'lb2_3001':int(lb2_3001),
-            'lb3_3001':lb3_3001,'lb4_3001':int(lb4_3001),'lb5_3001':lb5_3001,'r_3001':int(r_3001),
+            'lb_3':int(lb_3),'dy_3':int(dy_3),'iy_3':int(iy_3),'r2_3':r2_3,'r_radus_8':int(r_radus_8),'lb_8_1':int(lb_8_1),'le':int(le),
+            'lb_le':lb_le,'le_2':int(le_2),'lb_8_2':int(lb_8_2),'lb1_3001':lb1_3001,'lb2_3001':int(lb2_3001),
+            'lb3_3001':lb3_3001,'lb4_3001':int(lb4_3001),'lb5_3001':lb5_3001,'r_3001':int(r_3001),'r_3501':int(r_3501),'r_3901':int(r_3901),
             'le1_3001':int(le1_3001),'lb1_2_3501':lb1_2_3501,'lb3_3501':int(lb3_3501),'lb4_3501':lb4_3501,
             'lb5_3501':int(lb5_3501),'lb6_3501':lb6_3501,'le1_3501':int(le1_3501),'le2_3501':int(le2_3501),
             'lb1_3901':lb1_3901,'lb2_3901':lb2_3901,'lb3_3901':int(lb3_3901),'lb4_3901':lb4_3901,
@@ -440,11 +451,12 @@ def detail_revolving_door_view(request,id):
             'hareketli_kanat_boy':int(hareketli_kanat_boy),'hareketli_kanat_en':int(hareketli_kanat_en),'hareketli_kanat_yukseklik':int(hareketli_kanat_yukseklik),
             'gece_kalkani_en':int(gece_kalkani_en),'gece_kalkani_yukseklik':int(gece_kalkani_yukseklik),'gece_kalkani_boy':int(gece_kalkani_boy),
             'ph_gece':int(ph_gece),'pr_gece':int(pr_gece),'ch_sabit_kanat_gece':int(ch_sabit_kanat_gece),
-            'cr':int(cr_gece),'iydograma_gece':int(iydograma_gece),'dydograma_gece':int(dydograma_gece),
+            'cr_geces':int(cr_gece),'iydograma_gece':int(iydograma_gece),'dydograma_gece':int(dydograma_gece),
             'iycam_gece':int(iycam_gece),'dycam_gece':int(dycam_gece),'ik_gece':int(ik_gece),'dk_3_gece':int(dk_3_gece),
             'd':int(d),'d1':int(d1),'a_bukum':int(a_bukum),'a_kesim':int(a_kesim),'lb_gece':int(lb_gece),'le_gece':int(le_gece),
             'd_2':int(d_2),'d1_2':int(d1_2),'a_dis_yay':int(a_dis_yay),'b_ic_yay':int(b_ic_yay),
-            'd1_genel':int(d1_genel),
+            'd1_genel':int(d1_genel),'lb_3001_status':lb_3001_status,'lb_3501_status':lb_3501_status,'lb_3901_status':lb_3901_status,
+            'img_3000':img_3000,'img_3500':img_3500,'img_4000':img_4000, 
             
         }
     

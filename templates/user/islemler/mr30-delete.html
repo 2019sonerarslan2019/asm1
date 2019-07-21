@@ -17,7 +17,7 @@
                         
                     <h3>Silme İşlemi</h3>
                     <hr>
-                    <p><h4 class="text-dark">{{ id }} No'lu MR30 verilerini gerçekten silmek istiyormusun ?</b></h4> <br>
+                    <p><h4 class="text-dark">{{ data.crm_no }} CRM NO'lu MR30 verilerini gerçekten silmek istiyormusun ?</b></h4> <br>
                     <form action="" method="POST">
                         {% csrf_token %}
                         {{ form|crispy }}<br>

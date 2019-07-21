@@ -7,7 +7,13 @@
                 <thead>
                   <tr>
                     <th>
+                      {% if rd.night_sensor %}
+          <img  src="{% static 'img/genel/genel_g1_gece.jpg' %}" class="img-fluid" alt="">
+
+                      {% else %}
           <img  src="{% static 'img/genel/genel_g1.jpg' %}" class="img-fluid" alt="">
+
+                      {% endif %}
         </th>
         <th>
         {% if rd.wing == 3 %}

@@ -10,7 +10,7 @@
         <h1 style="text-align: center;"> {{ request.user.username }} <b>|</b> İşlem Geçmişi</h1>
         <hr>
         <div class="row">
-            <div class="col-md-6">  <h4>MR30/SA OTOMATİK DÖNER KAPI</h4></div>
+            <div class="col-md-6">  <h4>MR30/SA DÖNER KAPI</h4></div>
             <div class="col-md-6" style="text-align: right;">
               
         </div>
@@ -25,6 +25,7 @@
             <tr>
                 <th>CRM NO</th>
               <th>Firma</th>
+              <th>KAPI TÜRÜ</th>
               <th>Teslim Tarihi</th>
               <th>Kayıt Zamanı</th>
               <th>Detaylar</th>
@@ -35,8 +36,9 @@
           <tbody>
               {% for x in user1_data %}
             <tr>
-                <th>{{ x.id }}</th>
+                <th>{{ x.crm_no }}</th>
               <td>{{x.company}}</td>
+              <td>{{ x.mr30_type }}</td>
               <td>{{x.delivery_date}}</td>
               <td>{{x.published_date|timesince}} önce</td>
               <td><a href="{% url 'detailmr30' id=x.id %}" ><div class="btn btn-primary btn-sm">Görüntüle</div></a></td>

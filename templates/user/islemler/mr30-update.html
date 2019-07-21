@@ -12,6 +12,11 @@
           <h3 class="text-dark">{{title}}</h3>
           <div class="card">
               <div class="card-body">
+                  {% if ral_error %}
+                  <div class="alert alert-danger" role="alert">
+                      Ral Boya için renk kodu girilmedi !
+              </div>
+              {% endif %} 
           <form  method="post" enctype="multipart/form-data">
           {% csrf_token %}
           {{ form|crispy }}

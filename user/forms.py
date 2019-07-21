@@ -53,6 +53,7 @@ class UpdateMR30Form(forms.ModelForm):
             'fixed_glass',
             'moving_glass',
             'color',
+            'ral_color_code',
             'lighting',
             'broken_wing',
             'ground_circle',

@@ -16,7 +16,12 @@
 
                   <tr>
                     <td>{{ rd.crm_no }}</td>
-                    <td>{{ rd.color }}</td>
+                    <td>{% if rd.color == 'Ral Boya' %} 
+                        {{ rd.color}} ({{rd.ral_color_code}})
+                        {% else %}  
+                          {{ rd.color }}
+                        {% endif %}
+                      </td>
                   </tr>
 
                 </tbody>
