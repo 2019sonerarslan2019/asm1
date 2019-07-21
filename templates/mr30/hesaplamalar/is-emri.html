@@ -83,7 +83,12 @@
           <td>{{ rd.moving_glass }}</td>
           <td>4</td>
           <td>{{ rd.wing }}</td>
-          <td>{{ rd.color }}</td>
+          <td>{% if rd.color == 'Ral Boya' %} 
+            {{ rd.color}} ({{rd.ral_color_code}})
+            {% else %}  
+              {{ rd.color }}
+            {% endif %}
+          </td>
           <td>{{ rd.lighting }}</td>
         </tr>
 

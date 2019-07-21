@@ -21,25 +21,36 @@ def revolving_door_view(request):
 
 def create_revolving_door_view(request):
     if request.user.is_authenticated:
+
         dia_error = False
         trans_error = False
         canopy_error = False
+        ral_error = False
 
         form = RevolvingDoorForm(request.POST or None)
-
+         
         if form.is_valid():
 
             dia = form.cleaned_data.get('dia')
             trans_height = form.cleaned_data.get('trans_height')
             canopy = form.cleaned_data.get('canopy')
+            ral_color_code = form.cleaned_data.get('ral_color_code')
+            color = form.cleaned_data.get('color')
             
+            if color == 'Ral Boya':
+                if ral_color_code:
+                    ral_error = False
+                else:
+                    ral_error = True   
+
             if dia < 1600 or dia > 4000:
                 dia_error = True
             if trans_height < 1900 or trans_height > 4000:
                 trans_error = True
             if canopy < 100 or canopy > 1500:
-                canopy_error = True    
-            if dia_error == False and trans_error == False and canopy_error == False  :
+                canopy_error = True
+                   
+            if dia_error == False and trans_error == False and canopy_error == False and ral_error == False  :
 
                 mr30 = form.save(commit=False)
                 mr30.user = request.user 
@@ -51,6 +62,7 @@ def create_revolving_door_view(request):
             'dia_error':dia_error,
             'trans_error':trans_error,
             'canopy_error':canopy_error,
+            'ral_error':ral_error,
         }
 
         return render(request,'mr30/create-mr30.html',context)
@@ -358,31 +370,49 @@ def detail_revolving_door_view(request,id):
         else:
             ph_gece = YUVARLA(float(rd.trans_height) + 25)
             pr_gece = YUVARLA((float(rd.dia)/2)+38)
-            iydograma_gece = YUVARLA(((((float(rd.dia)/2)+8)*3.14)/3 + (41.7+41.7-11.5)) / 2)
-            dydograma_gece = YUVARLA(((((float(rd.dia)/2)+38)*3.14)/3 + (41.7+41.7-11.5)) / 2)
-            ik_gece = YUVARLA(((((float(rd.dia)/2)+8)*3.14)/3 + (41.7+41.7-11.5)) / 2 - 112)
-            dk_3_gece = YUVARLA(((((float(rd.dia)/2)+38)*3.14)/3 + (41.7+41.7-11.5)) / 2 - 112)
-            ch_sabit_kanat_gece = YUVARLA((rd.trans_height+48))
+            iydograma_gece = YUVARLA((((float(rd.dia)/2)+8)*3.14/4-5.8 + 41.7 ))
+            dydograma_gece = YUVARLA((((float(rd.dia)/2)+38)*3.14/4-5.8 + 41.7 ))
+            ik_gece = YUVARLA(((((float(rd.dia)/2)+8)*3.14)/4-5.8 + 41.7 - 112))
+            dk_3_gece = YUVARLA(((((float(rd.dia)/2)+38)*3.14)/4-5.8 + 41.7 - 112))
+            ch_sabit_kanat_gece = YUVARLA((rd.trans_height-48))
             cr_gece = YUVARLA((float(rd.dia)/2+21))
-            iycam_gece = YUVARLA((((float(rd.dia)/2)+21)*3.14)/6-46.5)
-            dycam_gece = YUVARLA((((float(rd.dia)/2)+13)*3.14)/6-46.5)
+            iycam_gece = YUVARLA((((float(rd.dia)/2)+13)*3.14)/4-47)
+            dycam_gece = YUVARLA((((float(rd.dia)/2)+21)*3.14)/6-46.5)
 
         #---------------------GK 3 RAY
-        d = (rd.dia +56 )/2
-        d1 = rd.dia / 2
-        a_bukum = YUVARLA((((((rd.dia / 2)+38)*3.14)/3 + (39.5+39.5-11.5)) *2 ) +500)
-        a_kesim = YUVARLA((((((rd.dia / 2)+38)*3.14)/3 + (39.5+39.5-11.5)) *2 ) +100)
-        
+        if rd.wing == 3:
+
+            d = (rd.dia +56 )/2
+            d1 = rd.dia / 2
+            a_bukum = YUVARLA((((((rd.dia / 2)+38)*3.14)/3 + (39.5+39.5-11.5)) *2 ) +500)
+            a_kesim = YUVARLA((((((rd.dia / 2)+38)*3.14)/3 + (39.5+39.5-11.5)) *2 ) +100)
+        else:
+            d = (rd.dia +56 )/2
+            d1 = rd.dia / 2
+            a_bukum = YUVARLA((((((rd.dia / 2)+38)*3.14)/2 + (39.5+39.5-11.5)) *2 ) +500)
+            a_kesim = YUVARLA((((((rd.dia / 2)+38)*3.14)/2 + (39.5+39.5-11.5)) *2 ) +100)
+
         #--------------------GK 3 K ALIN LEVHASI
 
-        lb_gece = YUVARLA(((((rd.dia+200)*3.14)/6)+400))
-        le_gece = rd.trans_height + 30
+        if rd.wing == 3:
+            lb_gece = YUVARLA(((((rd.dia+200)*3.14)/6)+400))
+            le_gece = rd.trans_height + 30
 
-        d_2 = rd.dia / 2
-        d1_2 = (rd.dia + 196 ) / 2   
-        a_dis_yay = ((((rd.dia + 196 )* 3.14 )/ 6 )+100)
-        b_ic_yay = ((((rd.dia)* 3.14 )/ 6 )+100)
-        
+            d_2 = rd.dia / 2
+            d1_2 = (rd.dia + 196 ) / 2   
+            a_dis_yay = ((((rd.dia + 196 )* 3.14 )/ 6 )+100)
+            b_ic_yay = ((((rd.dia)* 3.14 )/ 6 )+100)
+        else:
+
+            lb_gece = YUVARLA(((((rd.dia+200)*3.14)/4)+400))
+            le_gece = rd.trans_height + 30
+
+            d_2 = rd.dia / 2
+            d1_2 = (rd.dia + 196 ) / 2 
+
+            a_dis_yay = ((((rd.dia + 196 )* 3.14 )/ 6 )+100)
+            b_ic_yay = ((((rd.dia)* 3.14 )/ 6 )+100)
+
 
         context = {
             'rd':rd,

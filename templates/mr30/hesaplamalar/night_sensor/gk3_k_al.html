@@ -21,7 +21,7 @@
 
             <tr>
               <td>2 mm</td>
-              <td>3</td>
+              <td>{% if rd.wing == 3 %} 3 {% else %} 2 {% endif %}</td>
             </tr>
 
           </tbody>
@@ -78,7 +78,7 @@
                   <td>{{ d1_2 }} mm</td>
                   <td>{{ a_dis_yay }} mm</td>
                   <td>{{ b_ic_yay }} mm</td>
-                  <td>3</td>
+                  <td>{% if rd.wing == 3 %} 3 {% else %} 2 {% endif %}</td>
                 </tr>
     
               </tbody>

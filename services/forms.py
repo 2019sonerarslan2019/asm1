@@ -5,6 +5,7 @@ from django import forms
 
 class RevolvingDoorForm(forms.ModelForm):
     delivery_date = forms.DateTimeField(widget = forms.SelectDateWidget,label="Teslim Tarihi")
+    
 
     class Meta:
         model = RevolvingDoor
@@ -23,6 +24,7 @@ class RevolvingDoorForm(forms.ModelForm):
             'fixed_glass',
             'moving_glass',
             'color',
+            'ral_color_code',
             'lighting',
             'broken_wing',
             'ground_circle',
@@ -38,4 +40,3 @@ class RevolvingDoorForm(forms.ModelForm):
             'control',
             'manufacturing_chief',
         ]
-

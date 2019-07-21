@@ -63,6 +63,7 @@ class RevolvingDoor(models.Model):
     fixed_glass = models.CharField(max_length=100,verbose_name='Sabit Cam',choices=fixed_glass_data,default='4bombeliseffaflamine')
     moving_glass = models.CharField(max_length=100,verbose_name='Hareketli Cam',choices=moving_glass_data,default='8mmtemperli')
     color = models.CharField(max_length=100,verbose_name='Renk',choices=color_data,default='mateloksal')
+    ral_color_code = models.CharField(blank=True,null=True,max_length=100,verbose_name='Ral Boya İçin Renk Kodu')
     lighting = models.CharField(max_length=50,verbose_name='Işıklandırma',choices=lighting_data,default='ledspot')
     broken_wing = models.BooleanField(default=False,verbose_name='Kırılan Kanat')
     ground_circle = models.BooleanField(default=False,verbose_name='Yer Çemberi')
@@ -80,7 +81,7 @@ class RevolvingDoor(models.Model):
     control = models.CharField(blank=True,max_length=200,verbose_name='Kontrol')
     manufacturing_chief = models.CharField(blank=True,max_length=200,verbose_name='İmalat Şefi')  
 
-    published_date = models.DateTimeField(auto_now_add=True)
+    published_date = models.DateTimeField(auto_now_add=True,verbose_name='Oluşturulduğu Tarih')
 
     def __str__(self):
         return self.company

@@ -20,7 +20,11 @@
                             Çap 1600 - 4000 arası olmalı !
                     </div>
                 {% endif %}        
-
+                {% if ral_error %}
+                <div class="alert alert-danger" role="alert">
+                        Ral Boya için renk kodu girilmedi !
+                </div>
+            {% endif %} 
                     {% if trans_error %}
                     <div class="alert alert-danger" role="alert">
                             Geçiş Yüksekliği 1900 - 4000 arası olmalı !
