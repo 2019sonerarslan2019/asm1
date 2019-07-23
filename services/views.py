@@ -221,7 +221,7 @@ def detail_revolving_door_view(request,id):
         else: lb_3 = (int(rd.dia)-810)/2
 
         lb_3 = YUVARLA(lb_3)
-        dy_3 = ((((int(rd.dia)+242.5)+242.5)*3.14)/12)+70
+        dy_3 = (((int(rd.dia)-115)*3.14)/12)+70
         iy_3 =((695*3.14)/12)+40
         r2_3 = ((int(rd.dia) -115)/2)+5
 
@@ -343,7 +343,7 @@ def detail_revolving_door_view(request,id):
         
         hareketli_kanat_en = 300
         hareketli_kanat_yukseklik = YUVARLA((((rd.dia - 244)/2)+50))
-        hareketli_kanat_boy = YUVARLA(((rd.dia - 94 )/2) +80)
+        hareketli_kanat_boy = YUVARLA(rd.trans_height + 20 )
 
         gece_kalkani_en = 0
         gece_kalkani_yukseklik = 0
@@ -352,7 +352,7 @@ def detail_revolving_door_view(request,id):
         if rd.night_sensor:
             gece_kalkani_en = YUVARLA(((rd.dia / 2)+ 38)- math.sin((74*3.141593)/180) * ((rd.dia / 2) + 38 ) + 120)
             gece_kalkani_yukseklik = (((rd.dia / 2)+ 38)-30)*3.14/6+50
-            gece_kalkani_boy = (rd.trans_height + 20) / 10
+            gece_kalkani_boy = (rd.trans_height + 90)
             
 
         #-----------------9.1

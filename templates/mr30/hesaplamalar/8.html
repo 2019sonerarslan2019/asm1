@@ -33,16 +33,16 @@
         </div></br>
         <div class="row">
 
-            <div class="col-md-5">
+            <div class="col-md-5" style="text-align: center;">
 
                 {% if img_3000 %}
-                <img src="{% static 'img/8/3000.jpg' %}" class="img-fluid" alt=""><br>
+                <img src="{% static 'img/8/3000.jpg' %}" width="350" class="img-fluid" alt=""><br>
                 {% endif %}
                 {% if img_3500 %}
-                <img src="{% static 'img/8/3001-3500.png' %}" class="img-fluid" alt=""><br>
+                <img src="{% static 'img/8/3001-3500.png' %}" width="350" class="img-fluid" alt=""><br>
                 {% endif %}
                 {% if img_4000 %}
-                <img src="{% static 'img/8/3501-4000.png' %}" class="img-fluid" alt=""><br>
+                <img src="{% static 'img/8/3501-4000.png' %}" width="350" class="img-fluid" alt=""><br>
                 {% endif %}
               </div>
             <div class=col-md-7>
@@ -311,7 +311,7 @@
                    <div class="row">
                     <div class="col-md-12" style="text-align: center;">
                         <h3>ALIN LEVHASI SİPARİŞ BİLGİLERİ</h3>
-                        <img src="{% static 'img/8/lb_le2.jpg' %} " class="img-fluid" alt="">
+                        <img src="{% static 'img/8/lb_le2.jpg' %} " width="450" class="img-fluid" alt="">
                     </div>
                    </div>
                    <div class="row">
@@ -330,7 +330,13 @@
                         <tr>
                           <td>{{ rd.color }}</td>
                           <td>2 mm</td>
-                          <td>4</td>
+                          <td>
+                              {% if rd.wing == 3 %}
+                                    6
+                              {% else %}
+                                    4
+                              {% endif %}
+                          </td>
                         </tr>
 
                       </tbody>
